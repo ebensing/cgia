@@ -1,0 +1,8 @@
+node_modules/
+*.log
+*.swp
+nodelib/
+obj/
+bin/
+*.csproj
+*.csproj.user
