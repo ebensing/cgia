@@ -30,8 +30,8 @@ $("document").ready(function () {
             $selection.appendTo($container);
 
             $container.on('mousemove', function (e) {
-                var move_x = e.pageX,
-                    move_y = e.pageY,
+                var move_x = e.pageX - $image.position().left,
+                    move_y = e.pageY - $image.position().top,
                     width = Math.abs(move_x - click_x),
                     height = Math.abs(move_y - click_y);
 

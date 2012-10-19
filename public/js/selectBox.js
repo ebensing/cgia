@@ -24,8 +24,8 @@ $("document").ready(function () {
             });
             $selection.appendTo($container);
             $container.on('mousemove', function (e) {
-                var move_x = e.pageX;
-                var move_y = e.pageY;
+                var move_x = e.pageX - $image.position().left;
+                var move_y = e.pageY - $image.position().top;
                 var width = Math.abs(move_x - click_x);
                 var height = Math.abs(move_y - click_y);
 
