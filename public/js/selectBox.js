@@ -42,6 +42,7 @@ $("document").ready(function () {
                         'top': click_y - height
                     });
                 }
+                alignCover($selection, $image);
             }).on('mouseup', function (e) {
                 $container.off('mousemove');
                 alignCover($selection, $image);
