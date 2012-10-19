@@ -3,8 +3,8 @@ $("document").ready(function () {
     var $container = $("div").addClass('image-overlay');
     var $selection = $('<div>').addClass('selection-box');
     $container.css({
-        'top': $image.top(),
-        'left': $image.left(),
+        'top': $image.position().top,
+        'left': $image.position().left(),
         'height': $image.height(),
         'width': $image.width()
     });
