@@ -42,6 +42,8 @@ $("document").ready(function () {
                         'top': click_y - height
                     });
                 }
+            }).on('mouseup', function (e) {
+                $container.off('mousemove');
             });
         });
     });
