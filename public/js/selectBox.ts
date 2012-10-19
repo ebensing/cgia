@@ -14,8 +14,9 @@ $("document").ready(function () {
         $("body").append($container);
 
         $container.on('mousedown', function (e) {
-            var click_y = e.pageY;
-            var click_x = e.pageX;
+
+            var click_y = e.pageY - $image.position().top;
+            var click_x = e.pageX - $image.position().left;
 
             $selection.css({
                 'top': click_y,
