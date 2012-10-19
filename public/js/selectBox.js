@@ -55,4 +55,21 @@ function alignCover(selectObj, image) {
         height: (selectObj.position().top + image.position().top) + "px",
         width: "100%"
     });
+    $("#rightCover").css({
+        top: 0,
+        left: (selectObj.position().left + image.position().left + selectObj.width()) + "px",
+        height: "100%",
+        width: "100%"
+    });
+    $("#bottomCover").css({
+        top: (selectObj.position().top + image.position().top + selectObj.height()) + "px",
+        height: "100%",
+        width: "100%"
+    });
+    $("#leftCover").css({
+        top: 0,
+        height: "100%",
+        width: (selectObj.position().left + image.position().left) + "px",
+        left: 0
+    });
 }
