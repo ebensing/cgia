@@ -6,8 +6,8 @@
 declare import express = module("express");
 
 var async = require('async');
-import sequences = module("providers/SequenceProvider");
-import images = module("providers/ImageProvider");
+import sequences = module("../providers/SequenceProvider");
+import images = module("../providers/ImageProvider");
 
 var sequenceHelper = new sequences.SequenceProvider("localhost", 27017);
 var imageHelper = new images.ImageProvider("localhost", 27017);

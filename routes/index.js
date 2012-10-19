@@ -1,7 +1,7 @@
 
 var async = require('async');
-var sequences = require("./providers/SequenceProvider")
-var images = require("./providers/ImageProvider")
+var sequences = require("../providers/SequenceProvider")
+var images = require("../providers/ImageProvider")
 var sequenceHelper = new sequences.SequenceProvider("localhost", 27017);
 var imageHelper = new images.ImageProvider("localhost", 27017);
 function index(req, res) {
