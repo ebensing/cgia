@@ -2,7 +2,7 @@ declare var $;
 
 $("document").ready(function() {
     var $image = $('#mainImage');
-    var $container = $("div").addClass('image-overlay');
+    var $container = $("<div>").addClass('image-overlay');
     var $selection = $('<div>').addClass('selection-box');
 
     $container.css({
