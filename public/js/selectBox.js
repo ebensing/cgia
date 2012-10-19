@@ -1,4 +1,4 @@
-$("document").ready(function () {
+$("#mainImage").load(function () {
     var $image = $('#mainImage');
     var $container = $("<div>").addClass('image-overlay');
     var $selection = $('<div>').addClass('selection-box');
