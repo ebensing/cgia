@@ -19,7 +19,8 @@ $("document").ready(function () {
                 'width': 0,
                 'height': 0,
                 'background-color': 'red',
-                'z-index': 1000
+                'z-index': 1000,
+                'position': 'absolute'
             });
             $selection.appendTo($container);
             $container.on('mousemove', function (e) {
