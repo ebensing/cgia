@@ -6,8 +6,6 @@
 
 import express = module("express")
 
-//var express = require('express');
-
 var routes = require('./routes')
   , http = require('http');
 

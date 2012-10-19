@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+.image-overlay {
+    z-index: 999;
+    position: absolute;
+}

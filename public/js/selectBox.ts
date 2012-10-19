@@ -1,13 +1,20 @@
 declare var $;
 
 $("document").ready(function() {
-    var $container = $('#mainImage');
-    var $selection = $('#selectBox').addClass('selection-box');
+    var $image = $('#mainImage');
+    var $container = $("div").addClass('image-overlay');
+    var $selection = $('<div>').addClass('selection-box');
+
+    $container.css({
+        'top': $image.top(),
+        'left': $image.left(),
+        'height': $image.height(),
+        'width' : $image.width()
+    });
 
     $container.on('mousedown', function(e) {
         var click_y = e.pageY;
         var click_x = e.pageX;
-        $selection.show();
 
         $selection.css({
           'top':    click_y,
@@ -17,6 +24,7 @@ $("document").ready(function() {
           'background-color' : 'red',
           'z-index' : 1000
         });
+        $selection.appendTo($container);
 
         $container.on('mousemove', function(e) {
             var move_x = e.pageX,
