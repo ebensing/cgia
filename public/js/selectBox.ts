@@ -7,7 +7,7 @@ $("document").ready(function() {
 
     $container.css({
         'top': $image.position().top,
-        'left': $image.position().left(),
+        'left': $image.position().left,
         'height': $image.height(),
         'width' : $image.width()
     });
