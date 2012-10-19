@@ -60,6 +60,6 @@ function alignCover(selectObj, image) {
     $("#topCover").css({
         top: 0,
         height: (selectObj.position().top + image.position().top) + "px",
-        width: $("body").width() + "px"
+        width: "100%"
     });
 }
