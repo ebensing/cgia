@@ -44,15 +44,15 @@ $("document").ready(function () {
                 }
             }).on('mouseup', function (e) {
                 $container.off('mousemove');
-                alignCover($selection);
+                alignCover($selection, $image);
             });
         });
     });
 });
-function alignCover(selectObj) {
+function alignCover(selectObj, image) {
     $("#topCover").css({
         top: 0,
-        height: selectObj.position().top + "px",
+        height: (selectObj.position().top + image.position().top) + "px",
         width: $("body").width() + "px"
     });
 }
