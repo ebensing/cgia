@@ -30,7 +30,7 @@ var ImageProvider = (function () {
     ImageProvider.prototype.getImageById = function (id, callback) {
         this.getImageCollection(function (error, images) {
             if(error) {
-                callback(error);
+                callback(error, null);
             } else {
                 images.findOne({
                     _id: id

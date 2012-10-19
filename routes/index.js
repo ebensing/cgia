@@ -10,6 +10,9 @@ function index(req, res) {
             sequenceHelper.getActiveSequence(cb);
         }, 
         function (seq, cb) {
+            imageHelper.getImageById(seq.imageIds[0], function (e, img) {
+                cb(e, seq, img);
+            });
         }    ], function (error, seq, img) {
         res.render('index', {
             title: seq.title,

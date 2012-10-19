@@ -16,7 +16,9 @@ export function index(req : express.ExpressServerRequest, res : express.ExpressS
     async.waterfall([<any> (cb : (err : any, seq : sequences.Sequence) => void) => {
         sequenceHelper.getActiveSequence(cb);
     }, (seq : sequences.Sequence, cb : (err : any, seq : sequences.Sequence, img : images.Image) => void) => {
-
+        imageHelper.getImageById(seq.imageIds[0], (e: any, img: images.Image) => {
+            cb(e, seq, img);
+        });
     } ], function (error: any, seq : sequences.Sequence, img : images.Image) {
             res.render('index', { title: seq.title, imgUrl : img.url });
     });

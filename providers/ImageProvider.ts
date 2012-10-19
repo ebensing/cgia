@@ -23,10 +23,10 @@ export class ImageProvider {
     getImageCollection(callback: (error: any, collection: MongoCollection) => void ) {
         this.db.collection('images', callback);
     }
-    getImageById(id: mongo.ObjectID, callback: (error?: any, img?: Image) => void ) {
+    getImageById(id: mongo.ObjectID, callback: (error: any, img: Image) => void ) {
         this.getImageCollection((error : any, images : MongoCollection) => {
             if (error) {
-                callback(error);
+                callback(error, null);
             } else {
                 images.findOne({ _id: id }, callback);
             }
