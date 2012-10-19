@@ -3,6 +3,9 @@
  * GET home page.
  */
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
-};
+declare import express = module("express");
+
+export function index(req : express.ExpressServerRequest, res : express.ExpressServerResponse) {
+    res.render('index', { title: 'Express' });
+}
+
