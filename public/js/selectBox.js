@@ -8,6 +8,7 @@ $("document").ready(function () {
         'height': $image.height(),
         'width': $image.width()
     });
+    $("body").append($container);
     $container.on('mousedown', function (e) {
         var click_y = e.pageY;
         var click_x = e.pageX;
