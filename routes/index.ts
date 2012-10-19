@@ -5,7 +5,20 @@
 
 declare import express = module("express");
 
+var async = require('async');
+import sequences = module("providers/SequenceProvider");
+import images = module("providers/ImageProvider");
+
+var sequenceHelper = new sequences.SequenceProvider("localhost", 27017);
+var imageHelper = new images.ImageProvider("localhost", 27017);
+
 export function index(req : express.ExpressServerRequest, res : express.ExpressServerResponse) {
-    res.render('index', { title: 'Express' });
+    async.waterfall([<any> (cb : (err : any, seq : sequences.Sequence) => void) => {
+        sequenceHelper.getActiveSequence(cb);
+    }, (seq : sequences.Sequence, cb : (err : any, seq : sequences.Sequence, img : images.Image) => void) => {
+
+    } ], function (error: any, seq : sequences.Sequence, img : images.Image) {
+            res.render('index', { title: seq.title, imgUrl : img.url });
+    });
 }
 

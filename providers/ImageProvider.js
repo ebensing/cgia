@@ -17,7 +17,7 @@ var ImageProvider = (function () {
     function ImageProvider(host, port) {
         this.host = host;
         this.port = port;
-        this.db = new mongo.Db('rm-dash-r', new Server(host, port, {
+        this.db = new mongo.Db('cgia', new Server(host, port, {
             auto_reconnect: true
         }, {
         }));
@@ -33,7 +33,7 @@ var ImageProvider = (function () {
                 callback(error);
             } else {
                 images.findOne({
-                    _Id: id
+                    _id: id
                 }, callback);
             }
         });

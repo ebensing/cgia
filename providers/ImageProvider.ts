@@ -10,13 +10,14 @@ var bcrypt = require('bcrypt');
 declare import mongo = module("mongodb");
 
 export class Image {
+    public _id: mongo.ObjectID;
     constructor (public url: string, public title: string) { }
 }
 
 export class ImageProvider {
     public db: mongo.Db;
     constructor (public host: string, public port: number) {
-        this.db = new mongo.Db('rm-dash-r', new Server(host, port, { auto_reconnect: true }, {}));
+        this.db = new mongo.Db('cgia', new Server(host, port, { auto_reconnect: true }, {}));
         this.db.open(function () { });
     }
     getImageCollection(callback: (error: any, collection: MongoCollection) => void ) {
@@ -27,7 +28,7 @@ export class ImageProvider {
             if (error) {
                 callback(error);
             } else {
-                images.findOne({ _Id: id }, callback);
+                images.findOne({ _id: id }, callback);
             }
         });
     }
