@@ -64,9 +64,9 @@ function alignCover(selectObj, image) {
         width: "100%"
     });
     $("#rightCover").css({
-        top: 0,
+        top: (selectObj.position().top + image.position().top) + "px",
         left: (selectObj.position().left + image.position().left + selectObj.width()) + "px",
-        height: "100%",
+        height: selectObj.height() + "px",
         width: "100%"
     });
     $("#bottomCover").css({
@@ -75,8 +75,8 @@ function alignCover(selectObj, image) {
         width: "100%"
     });
     $("#leftCover").css({
-        top: 0,
-        height: "100%",
+        top: (selectObj.position().top + image.position().top) + "px",
+        height: selectObj.height() + "px",
         width: (selectObj.position().left + image.position().left) + "px",
         left: 0
     });
