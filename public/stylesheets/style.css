@@ -11,3 +11,10 @@ a {
     z-index: 999;
     position: absolute;
 }
+
+.cover {
+    z-index: 1000;
+    opacity: .7;
+    background-color: black;
+    position:absolute;
+}

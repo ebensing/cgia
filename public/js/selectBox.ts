@@ -23,7 +23,6 @@ $("document").ready(function () {
                 'left': click_x,
                 'width': 0,
                 'height': 0,
-                'background-color': 'red',
                 'z-index': 1000,
                 'position' : 'absolute'
             });
@@ -51,8 +50,16 @@ $("document").ready(function () {
                 }
             }).on('mouseup', function(e) {
                 $container.off('mousemove');
-
+                alignCover($selection);
             });
         });
     });
 });
+
+function alignCover(selectObj) {
+    $("#topCover").css({
+        top: 0,
+        height: selectObj.position().top + "px",
+        width: $("body").width() + "px"
+    });
+}
