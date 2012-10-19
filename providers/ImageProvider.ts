@@ -16,7 +16,7 @@ export class Image {
 export class ImageProvider {
     public db: mongo.Db;
     constructor (public host: string, public port: number) {
-        this.db = new mongo.Db('cgia', new Server(host, port, { auto_reconnect: true, safe : true }, {}));
+        this.db = new mongo.Db('cgia', new Server(host, port, { auto_reconnect: true }, {safe : true}));
         this.db.open(function () { });
     }
     getImageCollection(callback: (error: any, collection: MongoCollection) => void ) {

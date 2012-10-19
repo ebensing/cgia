@@ -17,9 +17,9 @@ var ImageProvider = (function () {
         this.host = host;
         this.port = port;
         this.db = new mongo.Db('cgia', new Server(host, port, {
-            auto_reconnect: true,
-            safe: true
+            auto_reconnect: true
         }, {
+            safe: true
         }));
         this.db.open(function () {
         });
