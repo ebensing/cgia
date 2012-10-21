@@ -3,6 +3,10 @@ $("document").ready(function () {
         var $image = $('#mainImage');
         var $container = $("<div>").addClass('image-overlay');
         var $selection = $('<div>').addClass('selection-box');
+        var $modal = $("#commentInput").modal({
+            backdrop: false,
+            show: false
+        });
         $container.css({
             'top': $image.position().top,
             'left': $image.position().left,
@@ -46,6 +50,7 @@ $("document").ready(function () {
             }).on('mouseup', function (e) {
                 $container.off('mousemove');
                 alignCover($selection, $image);
+                $("#commentInput").modal('show');
             });
         });
     });
