@@ -1,10 +1,10 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin:0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin: 0;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
 }
 
 .image-overlay {
@@ -16,9 +16,24 @@ a {
     z-index: 998;
     opacity: .7;
     background-color: black;
-    position:absolute;
+    position: absolute;
 }
 
 .table-padding {
     padding: 5px;
+}
+
+label.valid {
+    width: 24px;
+    height: 24px;
+    background: url(assets/img/valid.png) center center no-repeat;
+    display: inline-block;
+    text-indent: -9999px;
+}
+
+label.error {
+    font-weight: bold;
+    color: red;
+    padding: 2px 8px;
+    margin-top: 2px;
 }

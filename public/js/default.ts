@@ -6,7 +6,7 @@ $("document").ready(() => {
         $("#commentForm").submit();
     });
     $("textarea").css({
-        width: "505px"
+        width: "415px"
     });
     $('#commentForm').validate({
         rules: {
