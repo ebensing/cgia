@@ -25,7 +25,7 @@ function index(req, res) {
 }
 exports.index = index;
 function addComment(req, res) {
-    commentHelper.insertNewComment(req.params.imageId, req.params.username, parseFloat(req.params.x), parseFloat(req.params.y), parseFloat(req.params.width), parseFloat(req.params.height), req.params.title, req.params.text, function (error) {
+    commentHelper.insertNewComment(req.body.imageId, req.body.nameTxt, parseFloat(req.body.xTxt), parseFloat(req.body.yTxt), parseFloat(req.body.widthTxt), parseFloat(req.body.heightTxt), req.body.titleTxt, req.body.commentTxt, function (error) {
         res.render('postResp', {
         });
     });
