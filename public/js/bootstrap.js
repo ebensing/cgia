@@ -121,7 +121,7 @@
             leftMove = ($(window).width() / 2);
         }
 
-        var topEnd = currentMousePosition.y + $(".modal").height();
+        var topEnd = currentMousePosition.y + ($(".modal").height() / 2);
         var topMove = 0;
         if (topEnd > $(window).height()) {
             topMove = $(window).height() / 2;
