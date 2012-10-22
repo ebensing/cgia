@@ -18,7 +18,8 @@ function index(req, res) {
         }    ], function (error, seq, img) {
         res.render('index', {
             title: seq.title,
-            imgUrl: img.url
+            imgUrl: img.url,
+            imgId: img._id
         });
     });
 }
