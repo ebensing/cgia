@@ -3,7 +3,7 @@ var currentMousePosition = { x: 0, y: 0 };
 $("document").ready(() => {
     var $form = $("#commentForm");
     $form.submit(() => {
-        $.post($(this).attr('action'), $(this).serialize(), function (response) {
+        $.post($form.attr('action'), $form.serialize(), function (response) {
 
         }, 'json');
         return false;
