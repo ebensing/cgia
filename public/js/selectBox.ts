@@ -1,19 +1,6 @@
 declare var $;
-var currentMousePosition = { x: 0, y: 0 };
+
 $("document").ready(function() {
-    $("#commentSubmitBtn").click((e : Event) => {
-        e.preventDefault();
-        $("#commentForm").submit();
-    });
-    $("textarea").css({
-        width: "505px"
-    });
-    $(document).mousemove(function(event) {
-        currentMousePosition = {
-            x: event.pageX,
-            y: event.pageY
-        };
-    });
     $("#mainImage").load(function () {
         var $image = $('#mainImage');
         var $container = $("<div>").addClass('image-overlay');
