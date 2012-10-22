@@ -3,6 +3,10 @@ var currentMousePosition = {
     y: 0
 };
 $("document").ready(function () {
+    $("#commentSubmitBtn").click(function (e) {
+        e.preventDefault();
+        $("#commentForm").submit();
+    });
     $(document).mousemove(function (event) {
         currentMousePosition = {
             x: event.pageX,
