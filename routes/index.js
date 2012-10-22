@@ -25,6 +25,7 @@ function index(req, res) {
 }
 exports.index = index;
 function addComment(req, res) {
+    console.log(req.body.imageId);
     commentHelper.insertNewComment(req.body.imageId, req.body.nameTxt, parseFloat(req.body.xTxt), parseFloat(req.body.yTxt), parseFloat(req.body.widthTxt), parseFloat(req.body.heightTxt), req.body.titleTxt, req.body.commentTxt, function (error) {
         res.render('postResp', {
         });
