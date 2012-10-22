@@ -18,3 +18,7 @@ a {
     background-color: black;
     position:absolute;
 }
+
+.table-padding {
+    padding: 5px;
+}
