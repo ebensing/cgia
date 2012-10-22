@@ -71,6 +71,8 @@ $("document").ready(function () {
 });
 
 function alignCover(selectObj, image) {
+    var bOverflow = $(window).width() - image.width();
+    bOverflow = bOverflow < 0 ? 0 : bOverflow;
     $("#topCover").css({
         top: 0,
         height: (selectObj.position().top + image.position().top) + "px",
@@ -80,7 +82,7 @@ function alignCover(selectObj, image) {
         top: (selectObj.position().top + image.position().top) + "px",
         left: (selectObj.position().left + image.position().left + selectObj.width()) + "px",
         height: selectObj.height() + "px",
-        width: (image.width() - (selectObj.position().left + selectObj.width())) + "px"
+        width: (image.width() + bOverflow - (selectObj.position().left + selectObj.width())) + "px"
     });
     $("#bottomCover").css({
         top: (selectObj.position().top + image.position().top + selectObj.height()) + "px",
