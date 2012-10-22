@@ -1,6 +1,7 @@
 declare var $;
+var currentMousePosition = { x: 0, y: 0 };
 $("document").ready(function () {
-    var currentMousePosition = { x: 0, y: 0 };
+
     $(document).mousemove(function(event) {
         currentMousePosition = {
             x: event.pageX,
