@@ -121,15 +121,15 @@
             leftMove = ($(window).width() / 2);
         }
 
-        var topEnd = currentMousePosition.x + 20 - leftMove + ($(".modal").width() / 2) + $(".modal").height();
+        var topEnd = currentMousePosition.y + $(".modal").height();
         var topMove = 0;
         if (topEnd > $(window).height()) {
             topMove = $(window).height() / 2;
         }
 
         this.$element.css({
-            left: (currentMousePosition.x + 20 - leftMove - topMove + ($(".modal").width() / 2)).toString() + "px",
-            top: (currentMousePosition.y).toString() + "px"
+            left: (currentMousePosition.x + 20 - leftMove + ($(".modal").width() / 2)).toString() + "px",
+            top: (currentMousePosition.y - topMove).toString() + "px"
         });
 
         this.backdrop(function () {
