@@ -80,7 +80,7 @@ function alignCover(selectObj, image) {
         top: (selectObj.position().top + image.position().top) + "px",
         left: (selectObj.position().left + image.position().left + selectObj.width()) + "px",
         height: selectObj.height() + "px",
-        width: "100%"
+        width: (image.width() - (selectObj.position().left + selectObj.width())) + "px"
     });
     $("#bottomCover").css({
         top: (selectObj.position().top + image.position().top + selectObj.height()) + "px",
