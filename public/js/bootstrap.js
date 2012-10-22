@@ -115,8 +115,14 @@
 
         this.escape()
 
+        var endPos = currentMousePosition.x + 20 + ($(".modal").width() / 2) + $(".modal").width();
+        var leftMove = 0;
+        if (endPos > $(window).width()) {
+            leftMove = ($(window).width() / 2);
+        }
+
         this.$element.css({
-            left: (currentMousePosition.x + 20 + ($(".modal").width() / 2)).toString() + "px",
+            left: (currentMousePosition.x + 20 + leftMove + ($(".modal").width() / 2)).toString() + "px",
             top: (currentMousePosition.y).toString() + "px"
         });
 
