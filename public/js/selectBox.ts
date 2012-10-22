@@ -84,7 +84,7 @@ function alignCover(selectObj, image) {
     });
     $("#bottomCover").css({
         top: (selectObj.position().top + image.position().top + selectObj.height()) + "px",
-        height: (image.height() - (selectObj.position().top + image.position().top + selectObj.height())) + "px",
+        height: (image.height() - (selectObj.position().top + selectObj.height())) + "px",
         width: "100%"
     });
     $("#leftCover").css({
