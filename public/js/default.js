@@ -10,21 +10,17 @@ $("document").ready(function () {
     $("textarea").css({
         width: "505px"
     });
-    $('#contact-form').validate({
+    $('#commentForm').validate({
         rules: {
-            name: {
+            titleTxt: {
                 minlength: 2,
                 required: true
             },
-            email: {
-                required: true,
-                email: true
-            },
-            subject: {
+            nameTxt: {
                 minlength: 2,
                 required: true
             },
-            message: {
+            commentTxt: {
                 minlength: 2,
                 required: true
             }
