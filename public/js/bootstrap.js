@@ -116,7 +116,7 @@
         this.escape()
 
         this.$element.css({
-            left: (currentMousePosition.x + 20).toString() + "px"
+            left: (currentMousePosition.x + 20 + ($(".modal").width() / 2)).toString() + "px"
         });
 
         this.backdrop(function () {
