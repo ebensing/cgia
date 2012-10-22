@@ -9,12 +9,12 @@ block content
   div(id="leftCover").cover
 
   div(id="commentInput", tabindex=-1, role="dialog", aria-labelledby="myModalLabel", aria-hidden="true").modal.hide.fade
-    form(method="post", action="/addComment")
-        div.modal-header
-            button(type="button", data-dismiss="modal", aria-hidden="true").close
-                | X
-            h3(id="myModalLabel") Comment Submission
-        div.modal-body
+    div.modal-header
+        button(type="button", data-dismiss="modal", aria-hidden="true").close
+            | X
+        h3(id="myModalLabel") Comment Submission
+    div.modal-body
+        form(method="post", action="/addComment", id="commentForm", accept-charset="UTF-8")
             table.table-padding
                 tr
                     th Title:
@@ -29,6 +29,6 @@ block content
                 tr
                     td(colspan=2)
                         textarea(rows=5, cols=10)
-        div.modal-footer
-            button(data-dismiss="modal", aria-hidden="true").btn close
-            button.btn.btn-primary Submit Item
+    div.modal-footer
+        button(data-dismiss="modal", aria-hidden="true").btn close
+        button(id="commentSubmitBtn").btn.btn-primary Submit Item

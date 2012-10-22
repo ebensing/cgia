@@ -22,3 +22,7 @@ a {
 .table-padding {
     padding: 5px;
 }
+
+textarea {
+    width: 300px;
+}

@@ -1,7 +1,10 @@
 declare var $;
 var currentMousePosition = { x: 0, y: 0 };
 $("document").ready(function () {
-
+    $("#commentSubmitBtn").click((e : Event) => {
+        e.preventDefault();
+        $('#commentForm").submit();
+    });
     $(document).mousemove(function(event) {
         currentMousePosition = {
             x: event.pageX,
