@@ -116,7 +116,7 @@
         this.escape()
 
         this.$element.css({
-            left: $(".selection-box").position().left + $(".selection-box").width() + 20 + "px"
+            left: (currentMousePosition.x + 20).toString() + "px"
         });
 
         this.backdrop(function () {

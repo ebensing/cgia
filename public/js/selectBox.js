@@ -1,4 +1,14 @@
 $("document").ready(function () {
+    var currentMousePosition = {
+        x: 0,
+        y: 0
+    };
+    $(document).mousemove(function (event) {
+        currentMousePosition = {
+            x: event.pageX,
+            y: event.pageY
+        };
+    });
     $("#mainImage").load(function () {
         var $image = $('#mainImage');
         var $container = $("<div>").addClass('image-overlay');
