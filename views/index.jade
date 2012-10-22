@@ -9,12 +9,26 @@ block content
   div(id="leftCover").cover
 
   div(id="commentInput", tabindex=-1, role="dialog", aria-labelledby="myModalLabel", aria-hidden="true").modal.hide.fade
-    div.modal-header
-        button(type="button", data-dismiss="modal", aria-hidden="true").close
-            | X
-        h3(id="myModalLabel") Modal header
-    div.modal-body
-        | content goes here
-    div.modal-footer
-        button(data-dismiss="modal", aria-hidden="true").btn close
-        button.btn.btn-primary Submit Item
+    form(method="post", action="/addComment")
+        div.modal-header
+            button(type="button", data-dismiss="modal", aria-hidden="true").close
+                | X
+            h3(id="myModalLabel") Modal header
+        div.modal-body
+            table.table-padding
+                tr
+                    th Title:
+                    td 
+                        input(type='text', id='titleTxt', name='titleTxt')
+                tr
+                    th Name:
+                    td 
+                        input(type='text', id='nameTxt', name='nameTxt') 
+                tr
+                    th(colspan=2) How is this used for surveillance?:
+                tr
+                    td(colspan=2)
+                        textarea(rows=5, columns=10)
+        div.modal-footer
+            button(data-dismiss="modal", aria-hidden="true").btn close
+            button.btn.btn-primary Submit Item
