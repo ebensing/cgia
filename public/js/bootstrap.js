@@ -116,7 +116,7 @@
         this.escape()
 
         this.$element.css({
-            left: $("#rightCover").position().left + $(".selection-box").width() + 20 + "px"
+            left: $(".selection-box").position().left + $(".selection-box").width() + 20 + "px"
         });
 
         this.backdrop(function () {
