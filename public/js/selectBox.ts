@@ -6,7 +6,7 @@ $("document").ready(function() {
         $("#commentForm").submit();
     });
     $("textarea").css({
-        width: "400px"
+        width: "505px"
     });
     $(document).mousemove(function(event) {
         currentMousePosition = {
