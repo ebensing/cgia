@@ -5,6 +5,9 @@ $("document").ready(function() {
         e.preventDefault();
         $("#commentForm").submit();
     });
+    $("textarea").css({
+        width: "400px"
+    });
     $(document).mousemove(function(event) {
         currentMousePosition = {
             x: event.pageX,
