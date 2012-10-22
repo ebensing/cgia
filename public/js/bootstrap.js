@@ -115,6 +115,10 @@
 
         this.escape()
 
+        this.$element.css({
+            left: $("#rightCover").position().left + 20 + "px"
+        });
+
         this.backdrop(function () {
           var transition = $.support.transition && that.$element.hasClass('fade')
 
