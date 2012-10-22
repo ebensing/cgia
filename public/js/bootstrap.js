@@ -122,7 +122,7 @@
         }
 
         this.$element.css({
-            left: (currentMousePosition.x + 20 + leftMove + ($(".modal").width() / 2)).toString() + "px",
+            left: (currentMousePosition.x + 20 - leftMove + ($(".modal").width() / 2)).toString() + "px",
             top: (currentMousePosition.y).toString() + "px"
         });
 
