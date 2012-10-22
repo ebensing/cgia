@@ -59,6 +59,10 @@ $("document").ready(function () {
 function alignCover(selectObj, image) {
     var bOverflow = $(window).width() - image.width();
     bOverflow = bOverflow < 0 ? 0 : bOverflow;
+    $("#yTxt").val(selectObj.position().top + image.position().top);
+    $("#xTxt").val(selectObj.position().left + image.position().left);
+    $("#widthTxt").val(selectObj.width());
+    $("#heightTxt").val(selectObj.height());
     $("#topCover").css({
         top: 0,
         height: (selectObj.position().top + image.position().top) + "px",
