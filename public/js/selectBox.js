@@ -25,6 +25,7 @@ $("document").ready(function () {
         });
         $("body").append($container);
         $container.on('mousedown', function (e) {
+            $("#commentInput").modal('hide');
             var click_y = e.pageY - $image.position().top;
             var click_x = e.pageX - $image.position().left;
             $selection.css({
