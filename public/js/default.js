@@ -3,6 +3,13 @@ var currentMousePosition = {
     y: 0
 };
 $("document").ready(function () {
+    var _this = this;
+    var $form = $("#commentForm");
+    $form.submit(function () {
+        $.post($(_this).attr('action'), $(_this).serialize(), function (response) {
+        }, 'json');
+        return false;
+    });
     $("#commentSubmitBtn").click(function (e) {
         e.preventDefault();
         $("#commentForm").submit();

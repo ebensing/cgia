@@ -1,6 +1,13 @@
 declare var $;
 var currentMousePosition = { x: 0, y: 0 };
 $("document").ready(() => {
+    var $form = $("#commentForm");
+    $form.submit(() => {
+        $.post($(this).attr('action'), $(this).serialize(), function (response) {
+
+        }, 'json');
+        return false;
+    });
     $("#commentSubmitBtn").click((e: Event) => {
         e.preventDefault();
         $("#commentForm").submit();
