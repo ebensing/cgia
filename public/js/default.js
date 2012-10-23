@@ -12,7 +12,7 @@ $("document").ready(function () {
         $("#rightCover").hide();
         $("#leftCover").hide();
         $("#bottomCover").hide();
-        $(".image-overlay").hide();
+        $(".selection-box").hide();
         return false;
     });
     $("#commentSubmitBtn").click(function (e) {
