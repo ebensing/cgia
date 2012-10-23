@@ -11,7 +11,7 @@ $("document").ready(() => {
         $("#rightCover").hide();
         $("#leftCover").hide();
         $("#bottomCover").hide();
-        $(".selection-box").hide();
+        //$(".selection-box").hide();
         return false;
     });
     $("#commentSubmitBtn").click((e: Event) => {
