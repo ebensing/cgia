@@ -6,14 +6,13 @@ $("document").ready(function () {
     var $form = $("#commentForm");
     $form.submit(function () {
         $.post($form.attr('action'), $form.serialize(), function (response) {
-            alert('hi');
-            $("#commentInput").modal('hide');
-            $("#topCover").hide();
-            $("#rightCover").hide();
-            $("#leftCover").hide();
-            $("#bottomCover").hide();
-            $(".image-overlay").hide();
         }, 'json');
+        $("#commentInput").modal('hide');
+        $("#topCover").hide();
+        $("#rightCover").hide();
+        $("#leftCover").hide();
+        $("#bottomCover").hide();
+        $(".image-overlay").hide();
         return false;
     });
     $("#commentSubmitBtn").click(function (e) {
