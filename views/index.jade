@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1= title
-    if comments == []
+    if comments.length == 0
         a(href='showAll/'+imgId) View All
     img(src=imgUrl, alt="", id="mainImage")
     div(id="topCover").cover
