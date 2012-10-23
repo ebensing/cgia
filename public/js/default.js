@@ -9,10 +9,6 @@ $("document").ready(function () {
             $.post($form.attr('action'), $form.serialize(), function (response) {
             }, 'json');
             $("#commentInput").modal('hide');
-            $("#topCover").hide();
-            $("#rightCover").hide();
-            $("#leftCover").hide();
-            $("#bottomCover").hide();
         }
         return false;
     });

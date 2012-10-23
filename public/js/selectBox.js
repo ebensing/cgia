@@ -12,6 +12,12 @@ $("document").ready(function () {
             $("#titleTxt").val("");
             $("#commentTxt").val("");
         });
+        $modal.on('hidden', function () {
+            $("#topCover").hide();
+            $("#rightCover").hide();
+            $("#leftCover").hide();
+            $("#bottomCover").hide();
+        });
         $container.css({
             'top': $image.position().top,
             'left': $image.position().left,

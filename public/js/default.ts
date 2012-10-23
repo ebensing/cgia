@@ -8,10 +8,6 @@ $("document").ready(() => {
 
             }, 'json');
             $("#commentInput").modal('hide');
-            $("#topCover").hide();
-            $("#rightCover").hide();
-            $("#leftCover").hide();
-            $("#bottomCover").hide();
         }
         return false;
     });
