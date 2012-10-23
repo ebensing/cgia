@@ -9,7 +9,11 @@ $("document").ready(function() {
             backdrop: false,
             show: false
         });
-
+        $modal.on('show', () => {
+            $("#nameTxt").val("");
+            $("#titleTxt").val("");
+            $("#commentTxt").val("");
+        });
         $container.css({
             'top': $image.position().top,
             'left': $image.position().left,
