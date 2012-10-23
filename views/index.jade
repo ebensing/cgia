@@ -1,37 +1,40 @@
 extends layout
 
 block content
-  h1= title
-  img(src=imgUrl, alt="", id="mainImage")
-  div(id="topCover").cover
-  div(id="rightCover").cover
-  div(id="bottomCover").cover
-  div(id="leftCover").cover
+    h1= title
+    img(src=imgUrl, alt="", id="mainImage")
+    div(id="topCover").cover
+    div(id="rightCover").cover
+    div(id="bottomCover").cover
+    div(id="leftCover").cover
 
-  div(id="commentInput", tabindex=-1, role="dialog", aria-labelledby="myModalLabel", aria-hidden="true").modal.hide.fade
-    div.modal-header
-        button(type="button", data-dismiss="modal", aria-hidden="true").close
-            | X
-        h3(id="myModalLabel") Comment Submission
-    div.modal-body
-        form(method="post", action="/addComment", id="commentForm", accept-charset="UTF-8").form-horizontal
-            input(type="hidden", name="xTxt", id="xTxt")
-            input(type="hidden", name="yTxt", id="yTxt")
-            input(type="hidden", name="widthTxt", id="widthTxt")
-            input(type="hidden", name="heightTxt", id="heightTxt")
-            input(type="hidden", name="imageId", id="imageId", value=imgId)
-            div.control-group
-                label(for="titleTxt").control-label Title:
-                div.controls
-                    input(type='text', id='titleTxt', name='titleTxt', placeholder='Title')
-            div.control-group
-                label(for="nameTxt").control-label Name:
-                div.controls
-                    input(type='text', id='nameTxt', name='nameTxt', placeholder='Name')
-            div.control-group
-                label.control-label Comment:
-                div.controls
-                    textarea(rows=5, id="commentTxt", name="commentTxt", placeholder="How is this used for surveillance?")
-    div.modal-footer
-        button(data-dismiss="modal", aria-hidden="true").btn close
-        button(id="commentSubmitBtn").btn.btn-primary Submit Item
+    div(id="commentInput", tabindex=-1, role="dialog", aria-labelledby="myModalLabel", aria-hidden="true").modal.hide.fade
+        div.modal-header
+            button(type="button", data-dismiss="modal", aria-hidden="true").close
+                | X
+            h3(id="myModalLabel") Comment Submission
+        div.modal-body
+            form(method="post", action="/addComment", id="commentForm", accept-charset="UTF-8").form-horizontal
+                input(type="hidden", name="xTxt", id="xTxt")
+                input(type="hidden", name="yTxt", id="yTxt")
+                input(type="hidden", name="widthTxt", id="widthTxt")
+                input(type="hidden", name="heightTxt", id="heightTxt")
+                input(type="hidden", name="imageId", id="imageId", value=imgId)
+                div.control-group
+                    label(for="titleTxt").control-label Title:
+                    div.controls
+                        input(type='text', id='titleTxt', name='titleTxt', placeholder='Title')
+                div.control-group
+                    label(for="nameTxt").control-label Name:
+                    div.controls
+                        input(type='text', id='nameTxt', name='nameTxt', placeholder='Name')
+                div.control-group
+                    label.control-label Comment:
+                    div.controls
+                        textarea(rows=5, id="commentTxt", name="commentTxt", placeholder="How is this used for surveillance?")
+        div.modal-footer
+            button(data-dismiss="modal", aria-hidden="true").btn close
+            button(id="commentSubmitBtn").btn.btn-primary Submit Item
+  
+    each comment in comments
+        i(id=comment._id, x=comment.x, y=comment.y, h=comment.height, w=comment.width).icon-screenshot.icon-z

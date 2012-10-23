@@ -33,7 +33,7 @@ var CommentProvider = (function () {
     CommentProvider.prototype.getCommentCollection = function (callback) {
         this.db.collection('comment', callback);
     };
-    CommentProvider.prototype.getImageById = function (id, callback) {
+    CommentProvider.prototype.getCommentById = function (id, callback) {
         this.getCommentCollection(function (error, comments) {
             if(error) {
                 callback(error, null);
@@ -52,6 +52,20 @@ var CommentProvider = (function () {
                 var imgId = new ObjectID(imageId);
                 var comment = new Comment(imgId, username, x, y, width, height, title, text);
                 comments.insert(comment, null, callback);
+            }
+        });
+    };
+    CommentProvider.prototype.getAllCommentsByImageId = function (imageId, callback) {
+        this.getCommentCollection(function (error, comments) {
+            if(error) {
+                callback(error, null);
+            } else {
+                var imgId = new ObjectID(imageId);
+                comments.find({
+                    imageId: imgId
+                }).toArray(function (err, results) {
+                    callback(err, results);
+                });
             }
         });
     };

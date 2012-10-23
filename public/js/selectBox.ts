@@ -14,7 +14,7 @@ $("document").ready(function() {
             $("#titleTxt").val("");
             $("#commentTxt").val("");
         });
-        $modal.on('hidden', () => {
+        $modal.on('hide', () => {
             $("#topCover").hide();
             $("#rightCover").hide();
             $("#leftCover").hide();

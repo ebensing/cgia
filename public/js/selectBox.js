@@ -12,7 +12,7 @@ $("document").ready(function () {
             $("#titleTxt").val("");
             $("#commentTxt").val("");
         });
-        $modal.on('hidden', function () {
+        $modal.on('hide', function () {
             $("#topCover").hide();
             $("#rightCover").hide();
             $("#leftCover").hide();

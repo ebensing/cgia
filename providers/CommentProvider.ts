@@ -23,7 +23,7 @@ export class CommentProvider {
     getCommentCollection(callback: (error: any, collection: MongoCollection) => void ) {
         this.db.collection('comment', callback);
     }
-    getImageById(id: mongo.ObjectID, callback: (error: any, cmt: Comment) => void ) {
+    getCommentById(id: mongo.ObjectID, callback: (error: any, cmt: Comment) => void ) {
         this.getCommentCollection((error : any, comments : MongoCollection) => {
             if (error) {
                 callback(error, null);
@@ -40,6 +40,18 @@ export class CommentProvider {
                 var imgId = new ObjectID(imageId);
                 var comment = new Comment(imgId, username, x, y, width, height, title, text);
                 comments.insert(comment, null, callback);
+            }
+        });
+    }
+    getAllCommentsByImageId(imageId: string, callback: (error: any, comments: Comment[]) => void ) {
+        this.getCommentCollection((error: any, comments: MongoCollection) => {
+            if (error) {
+                callback(error, null);
+            } else {
+                var imgId = new ObjectID(imageId);
+                comments.find({ imageId: imgId }).toArray((err: any, results: Comment[]) => {
+                    callback(err, results);
+                });
             }
         });
     }

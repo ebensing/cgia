@@ -37,3 +37,8 @@ label.error {
     padding: 2px 8px;
     margin-top: 2px;
 }
+
+.icon-z {
+    z-index: 100;
+    position: absolute;
+}

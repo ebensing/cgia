@@ -47,4 +47,10 @@ $("document").ready(function () {
             y: event.pageY
         };
     });
+    $(".icon-screenshot").each(function () {
+        $(this).css({
+            top: $(this).attr("y"),
+            left: $(this).attr("x")
+        });
+    });
 });

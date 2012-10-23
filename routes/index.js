@@ -19,7 +19,8 @@ function index(req, res) {
         res.render('index', {
             title: seq.title,
             imgUrl: img.url,
-            imgId: img._id
+            imgId: img._id,
+            comments: []
         });
     });
 }
@@ -31,4 +32,28 @@ function addComment(req, res) {
     });
 }
 exports.addComment = addComment;
+function showAllComments(req, res) {
+    async.waterfall([
+        function (cb) {
+            sequenceHelper.getActiveSequence(cb);
+        }, 
+        function (seq, cb) {
+            imageHelper.getImageById(seq.imageIds[0], function (e, img) {
+                cb(e, seq, img);
+            });
+        }, 
+        function (seq, img, cb) {
+            commentHelper.getAllCommentsByImageId(req.params.imageId, function (error, cmmts) {
+                cb(error, seq, img, cmmts);
+            });
+        }    ], function (error, seq, img, cmmts) {
+        res.render('index', {
+            title: seq.title,
+            imgUrl: img.url,
+            imgId: img._id,
+            comments: cmmts
+        });
+    });
+}
+exports.showAllComments = showAllComments;
 
