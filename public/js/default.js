@@ -6,6 +6,7 @@ $("document").ready(function () {
     var $form = $("#commentForm");
     $form.submit(function () {
         $.post($form.attr('action'), $form.serialize(), function (response) {
+            alert('hi');
             $("#commentInput").modal('hide');
             $("#topCover").hide();
             $("#rightCover").hide();
