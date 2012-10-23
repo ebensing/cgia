@@ -71,6 +71,10 @@ function alignCover(selectObj, image) {
     $("#xTxt").val(selectObj.position().left + image.position().left);
     $("#widthTxt").val(selectObj.width());
     $("#heightTxt").val(selectObj.height());
+    $("#topCover").show();
+    $("#rightCover").show();
+    $("#leftCover").show();
+    $("#bottomCover").show();
     $("#topCover").css({
         top: 0,
         height: (selectObj.position().top + image.position().top) + "px",
