@@ -2,6 +2,8 @@ extends layout
 
 block content
     h1= title
+    if comments == []
+        a(href='showAll/'+imgId) View All
     img(src=imgUrl, alt="", id="mainImage")
     div(id="topCover").cover
     div(id="rightCover").cover

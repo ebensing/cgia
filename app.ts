@@ -28,7 +28,7 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/showAll', routes.showAllComments);
+app.get('/showAll/:imageId', routes.showAllComments);
 app.post('/addComment', routes.addComment);
 
 http.createServer(app).listen(app.get('port'), function(){
