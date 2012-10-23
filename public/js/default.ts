@@ -3,14 +3,16 @@ var currentMousePosition = { x: 0, y: 0 };
 $("document").ready(() => {
     var $form = $("#commentForm");
     $form.submit(() => {
-        $.post($form.attr('action'), $form.serialize(), function (response) {
-            
-        }, 'json');
-        $("#commentInput").modal('hide');
-        $("#topCover").hide();
-        $("#rightCover").hide();
-        $("#leftCover").hide();
-        $("#bottomCover").hide();
+        if ($("#commentForm").valid()) {
+            $.post($form.attr('action'), $form.serialize(), function (response) {
+
+            }, 'json');
+            $("#commentInput").modal('hide');
+            $("#topCover").hide();
+            $("#rightCover").hide();
+            $("#leftCover").hide();
+            $("#bottomCover").hide();
+        }
         return false;
     });
     $("#commentSubmitBtn").click((e: Event) => {

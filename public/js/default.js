@@ -5,13 +5,15 @@ var currentMousePosition = {
 $("document").ready(function () {
     var $form = $("#commentForm");
     $form.submit(function () {
-        $.post($form.attr('action'), $form.serialize(), function (response) {
-        }, 'json');
-        $("#commentInput").modal('hide');
-        $("#topCover").hide();
-        $("#rightCover").hide();
-        $("#leftCover").hide();
-        $("#bottomCover").hide();
+        if($("#commentForm").valid()) {
+            $.post($form.attr('action'), $form.serialize(), function (response) {
+            }, 'json');
+            $("#commentInput").modal('hide');
+            $("#topCover").hide();
+            $("#rightCover").hide();
+            $("#leftCover").hide();
+            $("#bottomCover").hide();
+        }
         return false;
     });
     $("#commentSubmitBtn").click(function (e) {
