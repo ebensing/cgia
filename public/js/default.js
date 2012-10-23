@@ -6,6 +6,12 @@ $("document").ready(function () {
     var $form = $("#commentForm");
     $form.submit(function () {
         $.post($form.attr('action'), $form.serialize(), function (response) {
+            $("#commentInput").modal('hide');
+            $("#topCover").hide();
+            $("#rightCover").hide();
+            $("#leftCover").hide();
+            $("#bottomCover").hide();
+            $(".image-overlay").hide();
         }, 'json');
         return false;
     });
@@ -14,7 +20,7 @@ $("document").ready(function () {
         $("#commentForm").submit();
     });
     $("textarea").css({
-        width: "415px"
+        width: "365px"
     });
     $('#commentForm').validate({
         rules: {
