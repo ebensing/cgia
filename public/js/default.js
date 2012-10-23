@@ -48,7 +48,7 @@ $("document").ready(function () {
         };
     });
     $(".icon-screenshot").each(function () {
-        alert('hi');
+        alert($(this).attr("y"));
         $(this).css({
             top: $(this).attr("y"),
             left: $(this).attr("x")
