@@ -5,7 +5,7 @@ body {
 }
 
 h1 {
-    padding:15px;
+    padding: 15px 5px 15px 50px;
     color:gray;
 }
 
@@ -52,4 +52,9 @@ label.error {
 
 .comment-content {
     display: none;
+}
+
+.image-wrap {
+    padding: 5px;
+    background: url('../images/img_bg.png');
 }
