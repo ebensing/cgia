@@ -73,11 +73,13 @@ $("document").ready(function () {
 function displayAllPopovers() {
     $(".icon-screenshot").each(function () {
         $(this).popover('show');
+        $(this).attr("shown", "true");
     });
 }
 function hideAllPopovers() {
     $(".icon-screenshot").each(function () {
         $(this).popover('hide');
+        $(this).attr("shown", "false");
     });
 }
 function showCovers(top, left, width, height, doShow) {

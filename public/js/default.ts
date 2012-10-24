@@ -74,12 +74,14 @@ $("document").ready(() => {
 function displayAllPopovers() {
     $(".icon-screenshot").each(function () {
         $(this).popover('show');
+        $(this).attr("shown", "true");
     });
 }
 
 function hideAllPopovers() {
     $(".icon-screenshot").each(function () {
         $(this).popover('hide');
+        $(this).attr("shown", "false");
     });
 }
 
