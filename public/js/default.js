@@ -54,6 +54,7 @@ $("document").ready(function () {
             top: $(this).attr("y") + "px",
             left: $(this).attr("x") + "px"
         });
+        $(this).attr("shown", "false");
         var $content = $("#content-" + $(this).attr("id"));
         $(this).popover({
             animation: true,
@@ -62,8 +63,9 @@ $("document").ready(function () {
             content: $content.text()
         });
         $(this).click(function () {
-            var isShown = $(_this).popover('getVisible');
+            var isShown = (/^true$/i).test($(_this).attr("shown"));
             showCovers(parseFloat($(_this).attr("y")), parseFloat($(_this).attr("x")), parseFloat($(_this).attr("w")), parseFloat($(_this).attr("h")), !isShown);
+            $(_this).attr("shown", (!isShown));
             $(_this).popover('toogle');
         });
     });
