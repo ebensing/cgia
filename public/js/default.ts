@@ -1,6 +1,9 @@
 declare var $;
 var currentMousePosition = { x: 0, y: 0 };
 $("document").ready(() => {
+    $(".image-wrap").css({
+        width: $(".image-wrap > img").width() + "px"
+    });
     var $form = $("#commentForm");
     $form.submit(() => {
         if ($("#commentForm").valid()) {

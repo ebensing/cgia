@@ -3,6 +3,9 @@ var currentMousePosition = {
     y: 0
 };
 $("document").ready(function () {
+    $(".image-wrap").css({
+        width: $(".image-wrap > img").width() + "px"
+    });
     var $form = $("#commentForm");
     $form.submit(function () {
         if($("#commentForm").valid()) {
