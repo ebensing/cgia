@@ -82,6 +82,7 @@ function showCovers(top, left, width, height) {
     $("#leftCover").show();
     $("#bottomCover").show();
     var image = $(".image-wrap > img");
+    var selectTop = top - image.position().top;
     $("#topCover").css({
         top: 0,
         height: top + "px",
@@ -95,7 +96,7 @@ function showCovers(top, left, width, height) {
     });
     $("#bottomCover").css({
         top: (top + height) + "px",
-        height: (image.height() - (height)) + "px",
+        height: (image.height() - (height + selectTop)) + "px",
         width: "100%"
     });
     $("#leftCover").css({
