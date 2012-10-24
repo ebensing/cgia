@@ -53,5 +53,12 @@ $("document").ready(() => {
             top: $(this).attr("y") + "px",
             left: $(this).attr("x") + "px"
         });
+        var $content = $("#content-" + $(this).attr("id"));
+        $(this).popover({
+            animation: true,
+            html: false,
+            title: $content.attr("title") + " By: " + $content.attr("user"),
+            content: $content.text()
+        });
     });
 });

@@ -42,3 +42,7 @@ label.error {
     z-index: 100;
     position: absolute;
 }
+
+.comment-content {
+    display: none;
+}
