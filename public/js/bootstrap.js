@@ -1118,7 +1118,11 @@
         , data = $this.data('popover')
         , options = typeof option == 'object' && option
       if (!data) $this.data('popover', (data = new Popover(this, options)))
-      if (typeof option == 'string') data[option]()
+        try {
+            if (typeof option == 'string') data[option]()
+        } catch (e) {
+
+        }
     })
   }
 
