@@ -4,8 +4,14 @@ body {
     background: url('../images/bg.png');
 }
 
+h1 {
+    padding:15px;
+    color:gray;
+}
+
 a {
     color: #00B7FF;
+    padding: 3px;
 }
 
 .image-overlay {
