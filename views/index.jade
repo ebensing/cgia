@@ -5,6 +5,12 @@ block content
     if comments.length == 0
         a(href='showAll/'+imgId) View All
         br
+    else
+        a(href='javascript:displayAllPopovers()') Show All Comment Contents
+        | &nbsp;&nbsp;
+        a(href='javascript:hideAllPopovers()') Hide All Comment Contents
+        br
+
     img(src=imgUrl, alt="", id="mainImage")
     div(id="topCover").cover
     div(id="rightCover").cover

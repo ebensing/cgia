@@ -65,3 +65,13 @@ $("document").ready(function () {
         });
     });
 });
+function displayAllPopovers() {
+    $(".icon-screenshot").each(function () {
+        $(this).popover('show');
+    });
+}
+function hideAllPopovers() {
+    $(".icon-screenshot").each(function () {
+        $(this).popover('hide');
+    });
+}
