@@ -62,7 +62,7 @@ $("document").ready(() => {
         });
         $(this).click(() => {
             $(this).popover('toogle');
-            showCovers($(this).attr("y"), $(this).attr("x"), $(this).attr("w"), $(this).attr("h"));
+            //showCovers($(this).attr("y"), $(this).attr("x"), $(this).attr("w"), $(this).attr("h"));
         });
     });
 });
