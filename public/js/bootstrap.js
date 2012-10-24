@@ -796,6 +796,7 @@
       this.$element = $(element)
       this.options = this.getOptions(options)
       this.enabled = true
+      this.isVisible = false;
 
       if (this.options.trigger == 'click') {
         this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this))
@@ -860,6 +861,7 @@
       if (this.hasContent() && this.enabled) {
         $tip = this.tip()
         this.setContent()
+        this.isVisible = true;
 
         if (this.options.animation) {
           $tip.addClass('fade')
@@ -909,8 +911,10 @@
 
       $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
       $tip.removeClass('fade in top bottom left right')
-    }
-
+  }
+      , getVisible: function () {
+          return this.isVisible;
+      }
   , hide: function () {
       var that = this
         , $tip = this.tip()

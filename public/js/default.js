@@ -2,6 +2,7 @@ var currentMousePosition = {
     x: 0,
     y: 0
 };
+var doToggle = true;
 $("document").ready(function () {
     var $form = $("#commentForm");
     $form.submit(function () {
@@ -61,7 +62,8 @@ $("document").ready(function () {
             content: $content.text()
         });
         $(this).click(function () {
-            showCovers(parseFloat($(_this).attr("y")), parseFloat($(_this).attr("x")), parseFloat($(_this).attr("w")), parseFloat($(_this).attr("h")));
+            var isShown = $(_this).popover('isVisible');
+            showCovers(parseFloat($(_this).attr("y")), parseFloat($(_this).attr("x")), parseFloat($(_this).attr("w")), parseFloat($(_this).attr("h")), !isShown);
             $(_this).popover('toogle');
         });
     });
@@ -76,11 +78,18 @@ function hideAllPopovers() {
         $(this).popover('hide');
     });
 }
-function showCovers(top, left, width, height) {
-    $("#topCover").toggle();
-    $("#rightCover").toggle();
-    $("#leftCover").toggle();
-    $("#bottomCover").toggle();
+function showCovers(top, left, width, height, doShow) {
+    if(doShow) {
+        $("#topCover").show();
+        $("#rightCover").show();
+        $("#leftCover").show();
+        $("#bottomCover").show();
+    } else {
+        $("#topCover").hide();
+        $("#rightCover").hide();
+        $("#leftCover").hide();
+        $("#bottomCover").hide();
+    }
     var image = $(".image-wrap > img");
     var selectTop = top - image.position().top;
     $("#topCover").css({
