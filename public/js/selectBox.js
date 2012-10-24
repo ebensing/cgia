@@ -1,5 +1,8 @@
 $("document").ready(function () {
     $("#mainImage").load(function () {
+        $(".image-wrap").css({
+            width: $(".image-wrap > img").width() + "px"
+        });
         var $image = $('#mainImage');
         var $container = $("<div>").addClass('image-overlay');
         var $selection = $('<div>').addClass('selection-box');
