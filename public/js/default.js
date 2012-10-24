@@ -77,10 +77,10 @@ function hideAllPopovers() {
     });
 }
 function showCovers(top, left, width, height) {
-    $("#topCover").show();
-    $("#rightCover").show();
-    $("#leftCover").show();
-    $("#bottomCover").show();
+    $("#topCover").toggle();
+    $("#rightCover").toggle();
+    $("#leftCover").toggle();
+    $("#bottomCover").toggle();
     var image = $(".image-wrap > img");
     var selectTop = top - image.position().top;
     $("#topCover").css({
