@@ -96,7 +96,7 @@ function showCovers(top, left, width, height) {
     });
     $("#bottomCover").css({
         top: (top + height) + "px",
-        height: (image.height() - (height + selectTop)) + "px",
+        height: (image.height() + 10 - (height + selectTop)) + "px",
         width: "100%"
     });
     $("#leftCover").css({
