@@ -60,5 +60,8 @@ $("document").ready(() => {
             title: $content.attr("title") + " By: " + $content.attr("user"),
             content: $content.text()
         });
+        $(this).click(() => {
+            $(this).popover('toogle');
+        });
     });
 });

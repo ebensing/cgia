@@ -48,6 +48,7 @@ $("document").ready(function () {
         };
     });
     $(".icon-screenshot").each(function () {
+        var _this = this;
         $(this).css({
             top: $(this).attr("y") + "px",
             left: $(this).attr("x") + "px"
@@ -58,6 +59,9 @@ $("document").ready(function () {
             html: false,
             title: $content.attr("title") + " By: " + $content.attr("user"),
             content: $content.text()
+        });
+        $(this).click(function () {
+            $(_this).popover('toogle');
         });
     });
 });
