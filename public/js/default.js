@@ -62,6 +62,7 @@ $("document").ready(function () {
         });
         $(this).click(function () {
             $(_this).popover('toogle');
+            showCovers($(_this).attr("y"), $(_this).attr("x"), $(_this).attr("w"), $(_this).attr("h"));
         });
     });
 });
@@ -73,5 +74,34 @@ function displayAllPopovers() {
 function hideAllPopovers() {
     $(".icon-screenshot").each(function () {
         $(this).popover('hide');
+    });
+}
+function showCovers(top, left, width, height) {
+    $("#topCover").show();
+    $("#rightCover").show();
+    $("#leftCover").show();
+    $("#bottomCover").show();
+    var image = $(".image-wrap > img");
+    $("#topCover").css({
+        top: 0,
+        height: top + "px",
+        width: "100%"
+    });
+    $("#rightCover").css({
+        top: top + "px",
+        left: (left + width) + "px",
+        height: height + "px",
+        width: (image.width() + (left + width)) + "px"
+    });
+    $("#bottomCover").css({
+        top: (top + height) + "px",
+        height: (image.height() - (top + height)) + "px",
+        width: "100%"
+    });
+    $("#leftCover").css({
+        top: (top) + "px",
+        height: height + "px",
+        width: (left) + "px",
+        left: 0
     });
 }
