@@ -98,7 +98,7 @@ function showCovers(top, left, width, height) {
     });
     $("#bottomCover").css({
         top: (top + height) + "px",
-        height: (image.height() - (top + height)) + "px",
+        height: (image.height() - (height)) + "px",
         width: "100%"
     });
     $("#leftCover").css({
