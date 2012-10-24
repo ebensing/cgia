@@ -62,7 +62,7 @@ $("document").ready(() => {
             content: $content.text()
         });
         $(this).click(() => {
-            var isShown = $(this).popover('isVisible');
+            var isShown = $(this).popover('getVisible');
             showCovers(parseFloat($(this).attr("y")), parseFloat($(this).attr("x")), parseFloat($(this).attr("w")), parseFloat($(this).attr("h")), !isShown);
             $(this).popover('toogle');
         });
