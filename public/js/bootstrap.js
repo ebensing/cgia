@@ -911,7 +911,7 @@
       $tip.removeClass('fade in top bottom left right')
   }
       , getVisible: function () {
-          return this.tip().hasClass('in');
+          return (this.tip().hasClass('in') ? true : false);
       }
   , hide: function () {
       var that = this
