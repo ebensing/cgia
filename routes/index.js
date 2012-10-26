@@ -18,7 +18,7 @@ function index(req, res) {
         }    ], function (error, seq, img) {
         var stage = seq.imageIds.length > 1 ? 2 : 0;
         res.render('index', {
-            title: seq.title,
+            title: seq.title + " - " + img.title,
             imgUrl: img.url,
             imgId: img._id,
             comments: [],
@@ -70,7 +70,7 @@ function getSpecificStage(req, res) {
         }    ], function (error, seq, img) {
         var stage = seq.imageIds.length > (parseInt(req.params.stage) + 1) ? (parseInt(req.params.stage) + 1) : 0;
         res.render('index', {
-            title: seq.title,
+            title: seq.title + " - " + img.title,
             imgUrl: img.url,
             imgId: img._id,
             comments: [],
