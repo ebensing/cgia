@@ -57,3 +57,7 @@ block content
         i(id=comment._id, x=comment.x, y=comment.y, h=comment.height, w=comment.width).icon-screenshot.icon-z
         div(id="content-"+comment._id, title=comment.title, user=comment.username).comment-content
             | #{comment.text}
+
+    if disableComment
+        script(type="text/javascript")
+            var disableComments = #{disableComment};

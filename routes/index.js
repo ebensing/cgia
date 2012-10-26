@@ -77,7 +77,8 @@ function getSpecificStage(req, res) {
             imgUrl: img.url,
             imgId: img._id,
             comments: [],
-            stage: stage
+            stage: stage,
+            disableComment: true
         });
     });
 }

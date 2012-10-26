@@ -61,6 +61,6 @@ export function getSpecificStage(req: express.ExpressServerRequest, res: express
         });
     } ], function (error: any, seq : sequences.Sequence, img : images.Image) {
         var stage = seq.imageIds.length > (parseInt(req.params.stage) + 1) ? (parseInt(req.params.stage) + 1) : 0;
-        res.render('index', { title: seq.title + " - " + img.title, imgUrl : img.url, imgId : img._id, comments : [], stage : stage });
+        res.render('index', { title: seq.title + " - " + img.title, imgUrl : img.url, imgId : img._id, comments : [], stage : stage, disableComment : true });
     });
 }
