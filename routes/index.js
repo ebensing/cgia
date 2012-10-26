@@ -40,7 +40,7 @@ function showAllComments(req, res) {
             sequenceHelper.getActiveSequence(cb);
         }, 
         function (seq, cb) {
-            imageHelper.getImageById(seq.imageIds[0], function (e, img) {
+            imageHelper.getImageById(req.params.imageId, function (e, img) {
                 cb(e, seq, img);
             });
         }, 
@@ -49,11 +49,14 @@ function showAllComments(req, res) {
                 cb(error, seq, img, cmmts);
             });
         }    ], function (error, seq, img, cmmts) {
+        var cStg = seq.imageIds.indexOf(img._id);
+        var stage = seq.imageIds.length > (cStg + 1) ? (cStg + 1) : 0;
         res.render('index', {
             title: seq.title,
             imgUrl: img.url,
             imgId: img._id,
-            comments: cmmts
+            comments: cmmts,
+            stage: stage
         });
     });
 }

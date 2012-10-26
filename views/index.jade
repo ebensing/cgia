@@ -3,7 +3,7 @@ extends layout
 block content
     h1= title
     if comments.length == 0
-        a(href='showAll/'+imgId) View All
+        a(href='/showAll/'+imgId) View All
         br
     else
         a(href='javascript:displayAllPopovers()') Show All Comment Contents
