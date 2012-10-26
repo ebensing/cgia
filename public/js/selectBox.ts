@@ -5,6 +5,9 @@ $("document").ready(function() {
         $(".image-wrap").css({
             width: $(".image-wrap > img").width() + "px"
         });
+        $(".arrow-wrap").css({
+            height: ($(".image-wrap > img").height() / 2) + "px"
+        });
         var $image = $('#mainImage');
         var $container = $("<div>").addClass('image-overlay');
         var $selection = $('<div>').addClass('selection-box');
