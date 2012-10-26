@@ -57,4 +57,24 @@ function showAllComments(req, res) {
     });
 }
 exports.showAllComments = showAllComments;
+function getSpecificStage(req, res) {
+    async.waterfall([
+        function (cb) {
+            sequenceHelper.getActiveSequence(cb);
+        }, 
+        function (seq, cb) {
+            imageHelper.getImageById(seq.imageIds[(parseInt(req.params.stage) - 1)], function (e, img) {
+                cb(e, seq, img);
+            });
+        }    ], function (error, seq, img) {
+        res.render('index', {
+            title: seq.title,
+            imgUrl: img.url,
+            imgId: img._id,
+            comments: [],
+            stage: (parseInt(req.params.stage) + 1)
+        });
+    });
+}
+exports.getSpecificStage = getSpecificStage;
 

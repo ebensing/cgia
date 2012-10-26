@@ -61,6 +61,7 @@
     <Content Include="Public\images\img_bg.png" />
     <Content Include="Public\images\living-room.jpg" />
     <TypeScriptCompile Include="Public\js\selectBox.ts" />
+    <Content Include="Public\images\street.jpg" />
     <Content Include="Public\images\valid.png" />
     <Content Include="Public\js\bootstrap.js" />
     <TypeScriptCompile Include="Public\js\default.ts" />

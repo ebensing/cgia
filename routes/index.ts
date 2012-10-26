@@ -49,3 +49,14 @@ export function showAllComments(req: express.ExpressServerRequest, res: express.
     });
 }
 
+export function getSpecificStage(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
+    async.waterfall([<any> (cb : (err : any, seq : sequences.Sequence) => void) => {
+        sequenceHelper.getActiveSequence(cb);
+    }, (seq : sequences.Sequence, cb : (err : any, seq : sequences.Sequence, img : images.Image) => void) => {
+        imageHelper.getImageById(seq.imageIds[(parseInt(req.params.stage) - 1)], (e: any, img: images.Image) => {
+            cb(e, seq, img);
+        });
+    } ], function (error: any, seq : sequences.Sequence, img : images.Image) {
+            res.render('index', { title: seq.title, imgUrl : img.url, imgId : img._id, comments : [], stage : (parseInt(req.params.stage) + 1) });
+    });
+}
