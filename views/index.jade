@@ -16,7 +16,8 @@ block content
             img(src=imgUrl, alt="", id="mainImage")
     
         div.arrow-wrap
-            img(src='images/arrow-right.png', alt='Next')
+            a(href='stage/'+stage)
+                img(src='images/arrow-right.png', alt='Next').img-border
 
     div(id="topCover").cover
     div(id="rightCover").cover

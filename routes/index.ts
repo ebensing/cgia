@@ -22,7 +22,7 @@ export function index(req : express.ExpressServerRequest, res : express.ExpressS
             cb(e, seq, img);
         });
     } ], function (error: any, seq : sequences.Sequence, img : images.Image) {
-            res.render('index', { title: seq.title, imgUrl : img.url, imgId : img._id, comments : [] });
+            res.render('index', { title: seq.title, imgUrl : img.url, imgId : img._id, comments : [], stage : 2 });
     });
 }
 

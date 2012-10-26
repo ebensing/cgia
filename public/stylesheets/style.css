@@ -64,3 +64,7 @@ label.error {
     display: inline-block;
     vertical-align:top;
 }
+
+.img-border {
+    border: 0;
+}

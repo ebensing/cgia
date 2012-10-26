@@ -20,7 +20,8 @@ function index(req, res) {
             title: seq.title,
             imgUrl: img.url,
             imgId: img._id,
-            comments: []
+            comments: [],
+            stage: 2
         });
     });
 }
