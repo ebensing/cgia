@@ -58,8 +58,7 @@ function showAllComments(req, res) {
             imgId: img._id,
             comments: cmmts,
             stage: stage,
-            enableComments: false,
-            enableComments: true
+            enableComments: false
         });
     });
 }

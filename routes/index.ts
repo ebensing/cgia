@@ -48,7 +48,7 @@ export function showAllComments(req: express.ExpressServerRequest, res: express.
     } ], function (error: any, seq : sequences.Sequence, img : images.Image, cmmts: comments.Comment[]) {
         var cStg = seq.imageIds.indexOf(img._id);
         var stage = seq.imageIds.length > (cStg + 1) ? (cStg + 1) : 0;
-        res.render('index', { title: seq.title, imgUrl : img.url, imgId : img._id, comments : cmmts, stage: stage, enableComments : false, enableComments : true });
+        res.render('index', { title: seq.title, imgUrl : img.url, imgId : img._id, comments : cmmts, stage: stage, enableComments : false });
     });
 }
 
