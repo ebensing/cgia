@@ -22,12 +22,17 @@ export class ImageProvider {
     getImageCollection(callback: (error: any, collection: MongoCollection) => void ) {
         this.db.collection('images', callback);
     }
-    getImageById(id: mongo.ObjectID, callback: (error: any, img: Image) => void ) {
+    getImageById(id: any, callback: (error: any, img: Image) => void ) {
         this.getImageCollection((error : any, images : MongoCollection) => {
             if (error) {
                 callback(error, null);
             } else {
-                images.findOne({ _id: id }, callback);
+                var oId = id;
+                if(typeof oId == "string")
+                {
+                    oId = new mongo.ObjectID(id);
+                }
+                images.findOne({ _id: oId }, callback);
             }
         });
     }

@@ -32,8 +32,12 @@ var ImageProvider = (function () {
             if(error) {
                 callback(error, null);
             } else {
+                var oId = id;
+                if(typeof oId == "string") {
+                    oId = new mongo.ObjectID(id);
+                }
                 images.findOne({
-                    _id: id
+                    _id: oId
                 }, callback);
             }
         });
