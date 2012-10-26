@@ -1,4 +1,5 @@
 declare var $;
+declare var enableComments : bool;
 
 $("document").ready(function() {
     $("#mainImage").load(function () {
@@ -49,33 +50,34 @@ $("document").ready(function() {
                 'position' : 'absolute'
             });
             $selection.appendTo($container);
+            if (enableComments) {
+                $container.on('mousemove', function (e) {
+                    var move_x = e.pageX - $image.position().left,
+                        move_y = e.pageY - $image.position().top,
+                        width = Math.abs(move_x - click_x),
+                        height = Math.abs(move_y - click_y);
 
-            $container.on('mousemove', function (e) {
-                var move_x = e.pageX - $image.position().left,
-                    move_y = e.pageY - $image.position().top,
-                    width = Math.abs(move_x - click_x),
-                    height = Math.abs(move_y - click_y);
-
-                $selection.css({
-                    'width': width,
-                    'height': height
+                    $selection.css({
+                        'width': width,
+                        'height': height
+                    });
+                    if (move_x < click_x) { //mouse moving left instead of right
+                        $selection.css({
+                            'left': click_x - width
+                        });
+                    }
+                    if (move_y < click_y) { //mouse moving up instead of down
+                        $selection.css({
+                            'top': click_y - height
+                        });
+                    }
+                    alignCover($selection, $image);
+                }).on('mouseup', function (e) {
+                    $container.off('mousemove');
+                    alignCover($selection, $image);
+                    $("#commentInput").modal('show');
                 });
-                if (move_x < click_x) { //mouse moving left instead of right
-                    $selection.css({
-                        'left': click_x - width
-                    });
-                }
-                if (move_y < click_y) { //mouse moving up instead of down
-                    $selection.css({
-                        'top': click_y - height
-                    });
-                }
-                alignCover($selection, $image);
-            }).on('mouseup', function(e) {
-                $container.off('mousemove');
-                alignCover($selection, $image);
-                $("#commentInput").modal('show');
-            });
+            }
         });
     });
 });

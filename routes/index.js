@@ -22,7 +22,8 @@ function index(req, res) {
             imgUrl: img.url,
             imgId: img._id,
             comments: [],
-            stage: stage
+            stage: stage,
+            enableComments: true
         });
     });
 }
@@ -56,7 +57,9 @@ function showAllComments(req, res) {
             imgUrl: img.url,
             imgId: img._id,
             comments: cmmts,
-            stage: stage
+            stage: stage,
+            enableComments: false,
+            enableComments: true
         });
     });
 }
@@ -78,7 +81,7 @@ function getSpecificStage(req, res) {
             imgId: img._id,
             comments: [],
             stage: stage,
-            disableComment: true
+            enableComments: true
         });
     });
 }

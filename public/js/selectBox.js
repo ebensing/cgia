@@ -44,32 +44,34 @@ $("document").ready(function () {
                 'position': 'absolute'
             });
             $selection.appendTo($container);
-            $container.on('mousemove', function (e) {
-                var move_x = e.pageX - $image.position().left;
-                var move_y = e.pageY - $image.position().top;
-                var width = Math.abs(move_x - click_x);
-                var height = Math.abs(move_y - click_y);
+            if(enableComments) {
+                $container.on('mousemove', function (e) {
+                    var move_x = e.pageX - $image.position().left;
+                    var move_y = e.pageY - $image.position().top;
+                    var width = Math.abs(move_x - click_x);
+                    var height = Math.abs(move_y - click_y);
 
-                $selection.css({
-                    'width': width,
-                    'height': height
+                    $selection.css({
+                        'width': width,
+                        'height': height
+                    });
+                    if(move_x < click_x) {
+                        $selection.css({
+                            'left': click_x - width
+                        });
+                    }
+                    if(move_y < click_y) {
+                        $selection.css({
+                            'top': click_y - height
+                        });
+                    }
+                    alignCover($selection, $image);
+                }).on('mouseup', function (e) {
+                    $container.off('mousemove');
+                    alignCover($selection, $image);
+                    $("#commentInput").modal('show');
                 });
-                if(move_x < click_x) {
-                    $selection.css({
-                        'left': click_x - width
-                    });
-                }
-                if(move_y < click_y) {
-                    $selection.css({
-                        'top': click_y - height
-                    });
-                }
-                alignCover($selection, $image);
-            }).on('mouseup', function (e) {
-                $container.off('mousemove');
-                alignCover($selection, $image);
-                $("#commentInput").modal('show');
-            });
+            }
         });
     });
 });
