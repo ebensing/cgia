@@ -16,12 +16,13 @@ function index(req, res) {
                 cb(e, seq, img);
             });
         }    ], function (error, seq, img) {
+        var stage = seq.imageIds.length > 1 ? 2 : 0;
         res.render('index', {
             title: seq.title,
             imgUrl: img.url,
             imgId: img._id,
             comments: [],
-            stage: 2
+            stage: stage
         });
     });
 }
@@ -67,12 +68,13 @@ function getSpecificStage(req, res) {
                 cb(e, seq, img);
             });
         }    ], function (error, seq, img) {
+        var stage = seq.imageIds.length > (parseInt(req.params.stage) + 1) ? (parseInt(req.params.stage) + 1) : 0;
         res.render('index', {
             title: seq.title,
             imgUrl: img.url,
             imgId: img._id,
             comments: [],
-            stage: (parseInt(req.params.stage) + 1)
+            stage: stage
         });
     });
 }

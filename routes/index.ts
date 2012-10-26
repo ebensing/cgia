@@ -22,7 +22,8 @@ export function index(req : express.ExpressServerRequest, res : express.ExpressS
             cb(e, seq, img);
         });
     } ], function (error: any, seq : sequences.Sequence, img : images.Image) {
-            res.render('index', { title: seq.title, imgUrl : img.url, imgId : img._id, comments : [], stage : 2 });
+        var stage = seq.imageIds.length > 1 ? 2 : 0;
+        res.render('index', { title: seq.title, imgUrl : img.url, imgId : img._id, comments : [], stage : stage });
     });
 }
 
@@ -57,6 +58,7 @@ export function getSpecificStage(req: express.ExpressServerRequest, res: express
             cb(e, seq, img);
         });
     } ], function (error: any, seq : sequences.Sequence, img : images.Image) {
-            res.render('index', { title: seq.title, imgUrl : img.url, imgId : img._id, comments : [], stage : (parseInt(req.params.stage) + 1) });
+        var stage = seq.imageIds.length > (parseInt(req.params.stage) + 1) ? (parseInt(req.params.stage) + 1) : 0;
+        res.render('index', { title: seq.title, imgUrl : img.url, imgId : img._id, comments : [], stage : stage });
     });
 }

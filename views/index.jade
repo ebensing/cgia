@@ -14,10 +14,11 @@ block content
     div(style="vertical-align:top;")
         div.image-wrap
             img(src=imgUrl, alt="", id="mainImage")
-    
-        div.arrow-wrap
-            a(href='stage/'+stage)
-                img(src='images/arrow-right.png', alt='Next').img-border
+        
+        if stage != 0
+            div.arrow-wrap
+                a(href='stage/'+stage)
+                    img(src='/images/arrow-right.png', alt='Next').img-border
 
     div(id="topCover").cover
     div(id="rightCover").cover
