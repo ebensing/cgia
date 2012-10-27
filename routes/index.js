@@ -57,7 +57,7 @@ function getSpecificStage(req, res) {
                 cb(e, seq, img);
             });
         }    ], function (error, seq, img) {
-        var stage = seq.imageIds.length > (parseInt(req.params.stage) + 1) ? (parseInt(req.params.stage) + 1) : 0;
+        var stage = seq.imageIds.length >= (parseInt(req.params.stage) + 1) ? (parseInt(req.params.stage) + 1) : 0;
         res.render('index', {
             title: seq.title + " - " + img.title,
             imgUrl: img.url,
