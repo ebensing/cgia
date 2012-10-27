@@ -67,5 +67,5 @@ export function getSpecificStage(req: express.ExpressServerRequest, res: express
 }
 
 export function about(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
-        res.render('about', { title: "About" });
+    res.render('about', { title: "About" });
 }
