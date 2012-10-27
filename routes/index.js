@@ -69,4 +69,10 @@ function getSpecificStage(req, res) {
     });
 }
 exports.getSpecificStage = getSpecificStage;
+function about(req, res) {
+    res.render('about', {
+        title: "About"
+    });
+}
+exports.about = about;
 

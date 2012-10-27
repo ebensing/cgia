@@ -65,3 +65,7 @@ export function getSpecificStage(req: express.ExpressServerRequest, res: express
         res.render('index', { title: seq.title + " - " + img.title, imgUrl : img.url, imgId : img._id, comments : [], stage : stage, enableComments : true });
     });
 }
+
+export function about(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
+        res.render('about', { title: "About" });
+}
