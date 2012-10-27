@@ -69,6 +69,14 @@ $("document").ready(function () {
             $(_this).popover('toogle');
         });
     });
+    $("#instructionsModal").modal({
+        backdrop: true,
+        show: false,
+        posModal: false
+    });
+    $("#instructionsBtn").click(function () {
+        $("#instructionsModal").modal('show');
+    });
 });
 function displayAllPopovers() {
     $(".icon-screenshot").each(function () {
