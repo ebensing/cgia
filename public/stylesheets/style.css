@@ -68,3 +68,8 @@ label.error {
 .img-border {
     border: 0;
 }
+
+.half-width {
+    display: inline-block;
+    width: 50%;
+}

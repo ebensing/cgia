@@ -55,6 +55,8 @@
     </Content>
     <Content Include="Public\images\arrow-right.png" />
     <Content Include="Public\images\bg.png" />
+    <Content Include="Public\images\drag-after.png" />
+    <Content Include="Public\images\drag-before.png" />
     <Content Include="Public\images\error.png" />
     <Content Include="Public\images\glyphicons-halflings-white.png" />
     <Content Include="Public\images\glyphicons-halflings.png" />

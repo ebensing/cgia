@@ -87,7 +87,8 @@
   * ====================== */
 
   var Modal = function (element, options) {
-    this.options = options
+      this.options = options
+      this.options.posModal = this.options['posModal'] !== undefined ? this.options.posModal : true;
     this.$element = $(element)
       .delegate('[data-dismiss="modal"]', 'click.dismiss.modal', $.proxy(this.hide, this))
     this.options.remote && this.$element.find('.modal-body').load(this.options.remote)
@@ -114,24 +115,24 @@
         this.isShown = true
 
         this.escape()
+        if (this.options.posModal) {
+            var endPos = currentMousePosition.x + 20 + ($(".modal").width() / 2) + $(".modal").width();
+            var leftMove = 0;
+            if (endPos > $(window).width()) {
+                leftMove = ($(window).width() / 2);
+            }
 
-        var endPos = currentMousePosition.x + 20 + ($(".modal").width() / 2) + $(".modal").width();
-        var leftMove = 0;
-        if (endPos > $(window).width()) {
-            leftMove = ($(window).width() / 2);
+            var topEnd = currentMousePosition.y + ($(".modal").height() / 2);
+            var topMove = 0;
+            if (topEnd > $(window).height()) {
+                topMove = $(window).height() / 4;
+            }
+
+            this.$element.css({
+                left: (currentMousePosition.x + 20 - leftMove + ($(".modal").width() / 2)).toString() + "px",
+                top: (currentMousePosition.y - topMove).toString() + "px"
+            });
         }
-
-        var topEnd = currentMousePosition.y + ($(".modal").height() / 2);
-        var topMove = 0;
-        if (topEnd > $(window).height()) {
-            topMove = $(window).height() / 4;
-        }
-
-        this.$element.css({
-            left: (currentMousePosition.x + 20 - leftMove + ($(".modal").width() / 2)).toString() + "px",
-            top: (currentMousePosition.y - topMove).toString() + "px"
-        });
-
         this.backdrop(function () {
           var transition = $.support.transition && that.$element.hasClass('fade')
 
