@@ -73,3 +73,7 @@ label.error {
     display: inline-block;
     width: 50%;
 }
+
+.modal-body-padding {
+    padding: 10px;
+}
