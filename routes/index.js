@@ -7,24 +7,8 @@ var sequenceHelper = new sequences.SequenceProvider("localhost", 27017);
 var imageHelper = new images.ImageProvider("localhost", 27017);
 var commentHelper = new comments.CommentProvider("localhost", 27017);
 function index(req, res) {
-    async.waterfall([
-        function (cb) {
-            sequenceHelper.getActiveSequence(cb);
-        }, 
-        function (seq, cb) {
-            imageHelper.getImageById(seq.imageIds[0], function (e, img) {
-                cb(e, seq, img);
-            });
-        }    ], function (error, seq, img) {
-        var stage = seq.imageIds.length > 1 ? 2 : 0;
-        res.render('index', {
-            title: seq.title + " - " + img.title,
-            imgUrl: img.url,
-            imgId: img._id,
-            comments: [],
-            stage: stage,
-            enableComments: true
-        });
+    res.render('home', {
+        title: "Home"
     });
 }
 exports.index = index;

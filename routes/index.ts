@@ -15,7 +15,7 @@ var imageHelper = new images.ImageProvider("localhost", 27017);
 var commentHelper = new comments.CommentProvider("localhost", 27017);
 
 export function index(req : express.ExpressServerRequest, res : express.ExpressServerResponse) {
-    async.waterfall([<any> (cb : (err : any, seq : sequences.Sequence) => void) => {
+    /*async.waterfall([<any> (cb : (err : any, seq : sequences.Sequence) => void) => {
         sequenceHelper.getActiveSequence(cb);
     }, (seq : sequences.Sequence, cb : (err : any, seq : sequences.Sequence, img : images.Image) => void) => {
         imageHelper.getImageById(seq.imageIds[0], (e: any, img: images.Image) => {
@@ -24,7 +24,8 @@ export function index(req : express.ExpressServerRequest, res : express.ExpressS
     } ], function (error: any, seq : sequences.Sequence, img : images.Image) {
         var stage = seq.imageIds.length > 1 ? 2 : 0;
         res.render('index', { title: seq.title + " - " + img.title, imgUrl : img.url, imgId : img._id, comments : [], stage : stage, enableComments : true });
-    });
+    });*/
+    res.render('home', { title: "Home" });
 }
 
 export function addComment(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
