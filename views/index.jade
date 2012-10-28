@@ -1,16 +1,15 @@
 extends layout
 
 block content
-    h1= title
-    if comments.length == 0
-        a(href='/showAll/'+imgId) View All
-        br
-    else
-        a(href='javascript:displayAllPopovers()') Show All Comment Contents
-        | &nbsp;&nbsp;
-        a(href='javascript:hideAllPopovers()') Hide All Comment Contents
-        br
-        br
+    div.row
+        div.span9
+            h1= title
+        div.span3
+            if comments.length != 0
+                a(href='javascript:displayAllPopovers()').btn Show All Comment Contents
+                | &nbsp;&nbsp;
+                a(href='javascript:hideAllPopovers()').btn Hide All Comment Contents
+
     div(style="vertical-align:top;")
         div.image-wrap
             img(src=imgUrl, alt="", id="mainImage")
