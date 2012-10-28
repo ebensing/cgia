@@ -30,7 +30,7 @@ function showAllComments(req, res) {
             });
         }, 
         function (seq, img, cb) {
-            commentHelper.getAllCommentsByImageId(req.params.imageId, function (error, cmmts) {
+            commentHelper.getAllCommentsByImageId(req.params.imageId, false, function (error, cmmts) {
                 cb(error, seq, img, cmmts);
             });
         }    ], function (error, seq, img, cmmts) {
@@ -47,6 +47,34 @@ function showAllComments(req, res) {
     });
 }
 exports.showAllComments = showAllComments;
+function showCuratedComments(req, res) {
+    async.waterfall([
+        function (cb) {
+            sequenceHelper.getActiveSequence(cb);
+        }, 
+        function (seq, cb) {
+            imageHelper.getImageById(req.params.imageId, function (e, img) {
+                cb(e, seq, img);
+            });
+        }, 
+        function (seq, img, cb) {
+            commentHelper.getAllCommentsByImageId(seq.imageIds[(parseInt(req.params.stage) - 1)], true, function (error, cmmts) {
+                cb(error, seq, img, cmmts);
+            });
+        }    ], function (error, seq, img, cmmts) {
+        var cStg = seq.imageIds.indexOf(img._id);
+        var stage = seq.imageIds.length > (cStg + 1) ? (cStg + 1) : 0;
+        res.render('index', {
+            title: seq.title,
+            imgUrl: img.url,
+            imgId: img._id,
+            comments: cmmts,
+            stage: stage,
+            enableComments: false
+        });
+    });
+}
+exports.showCuratedComments = showCuratedComments;
 function getSpecificStage(req, res) {
     async.waterfall([
         function (cb) {

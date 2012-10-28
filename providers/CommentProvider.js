@@ -56,14 +56,18 @@ var CommentProvider = (function () {
             }
         });
     };
-    CommentProvider.prototype.getAllCommentsByImageId = function (imageId, callback) {
+    CommentProvider.prototype.getAllCommentsByImageId = function (imageId, curated, callback) {
         this.getCommentCollection(function (error, comments) {
             if(error) {
                 callback(error, null);
             } else {
-                var imgId = new ObjectID(imageId);
+                var imgId = imageId;
+                if(typeof imgId == "string") {
+                    imgId = new ObjectID(imageId);
+                }
                 comments.find({
-                    imageId: imgId
+                    imageId: imgId,
+                    isCurated: curated
                 }).toArray(function (err, results) {
                     callback(err, results);
                 });

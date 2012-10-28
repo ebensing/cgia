@@ -11,6 +11,7 @@ declare import mongo = module("mongodb");
 export class Comment {
     public _id: mongo.ObjectID;
     public link: string;
+    public isCurated: bool;
     constructor (public imageId: mongo.ObjectID, public username: string, public x: number, 
         public y: number, public width: number, public height: number, public title: string, public text: string) { }
 }
@@ -45,13 +46,17 @@ export class CommentProvider {
             }
         });
     }
-    getAllCommentsByImageId(imageId: string, callback: (error: any, comments: Comment[]) => void ) {
+    getAllCommentsByImageId(imageId: any, curated : bool, callback: (error: any, comments: Comment[]) => void ) {
         this.getCommentCollection((error: any, comments: MongoCollection) => {
             if (error) {
                 callback(error, null);
             } else {
-                var imgId = new ObjectID(imageId);
-                comments.find({ imageId: imgId }).toArray((err: any, results: Comment[]) => {
+
+                var imgId = imageId;
+                if (typeof imgId == "string") {
+                    imgId = new ObjectID(imageId);
+                }
+                comments.find({ imageId: imgId, isCurated : curated }).toArray((err: any, results: Comment[]) => {
                     callback(err, results);
                 });
             }
