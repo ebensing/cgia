@@ -21,7 +21,7 @@ app.configure('development', function () {
     app.use(express.errorHandler());
 });
 app.get('/', routes.index);
-app.get('/showAll/:imageId', routes.showAllComments);
+app.get('/stage/:stage/all', routes.showAllComments);
 app.post('/addComment', routes.addComment);
 app.get('/stage/:stage', routes.getSpecificStage);
 app.get('/about', routes.about);

@@ -56,7 +56,7 @@ var CommentProvider = (function () {
             }
         });
     };
-    CommentProvider.prototype.getAllCommentsByImageId = function (imageId, curated, callback) {
+    CommentProvider.prototype.getAllCommentsCuratedByImageId = function (imageId, curated, callback) {
         this.getCommentCollection(function (error, comments) {
             if(error) {
                 callback(error, null);
@@ -68,6 +68,23 @@ var CommentProvider = (function () {
                 comments.find({
                     imageId: imgId,
                     isCurated: curated
+                }).toArray(function (err, results) {
+                    callback(err, results);
+                });
+            }
+        });
+    };
+    CommentProvider.prototype.getAllCommentsByImageId = function (imageId, callback) {
+        this.getCommentCollection(function (error, comments) {
+            if(error) {
+                callback(error, null);
+            } else {
+                var imgId = imageId;
+                if(typeof imgId == "string") {
+                    imgId = new ObjectID(imageId);
+                }
+                comments.find({
+                    imageId: imgId
                 }).toArray(function (err, results) {
                     callback(err, results);
                 });

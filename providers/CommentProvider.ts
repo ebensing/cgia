@@ -46,7 +46,7 @@ export class CommentProvider {
             }
         });
     }
-    getAllCommentsByImageId(imageId: any, curated : bool, callback: (error: any, comments: Comment[]) => void ) {
+    getAllCommentsCuratedByImageId(imageId: any, curated : bool, callback: (error: any, comments: Comment[]) => void ) {
         this.getCommentCollection((error: any, comments: MongoCollection) => {
             if (error) {
                 callback(error, null);
@@ -57,6 +57,22 @@ export class CommentProvider {
                     imgId = new ObjectID(imageId);
                 }
                 comments.find({ imageId: imgId, isCurated : curated }).toArray((err: any, results: Comment[]) => {
+                    callback(err, results);
+                });
+            }
+        });
+    }
+    getAllCommentsByImageId(imageId: any, callback: (error: any, comments: Comment[]) => void ) {
+        this.getCommentCollection((error: any, comments: MongoCollection) => {
+            if (error) {
+                callback(error, null);
+            } else {
+
+                var imgId = imageId;
+                if (typeof imgId == "string") {
+                    imgId = new ObjectID(imageId);
+                }
+                comments.find({ imageId: imgId }).toArray((err: any, results: Comment[]) => {
                     callback(err, results);
                 });
             }

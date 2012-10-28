@@ -25,12 +25,12 @@ function showAllComments(req, res) {
             sequenceHelper.getActiveSequence(cb);
         }, 
         function (seq, cb) {
-            imageHelper.getImageById(req.params.imageId, function (e, img) {
+            imageHelper.getImageById(seq.imageIds[(parseInt(req.params.stage) - 1)], function (e, img) {
                 cb(e, seq, img);
             });
         }, 
         function (seq, img, cb) {
-            commentHelper.getAllCommentsByImageId(req.params.imageId, false, function (error, cmmts) {
+            commentHelper.getAllCommentsByImageId(seq.imageIds[(parseInt(req.params.stage) - 1)], function (error, cmmts) {
                 cb(error, seq, img, cmmts);
             });
         }    ], function (error, seq, img, cmmts) {
@@ -42,7 +42,8 @@ function showAllComments(req, res) {
             imgId: img._id,
             comments: cmmts,
             stage: stage,
-            enableComments: false
+            enableComments: false,
+            urlAdd: '/all'
         });
     });
 }
@@ -58,7 +59,7 @@ function showCuratedComments(req, res) {
             });
         }, 
         function (seq, img, cb) {
-            commentHelper.getAllCommentsByImageId(seq.imageIds[(parseInt(req.params.stage) - 1)], true, function (error, cmmts) {
+            commentHelper.getAllCommentsCuratedByImageId(seq.imageIds[(parseInt(req.params.stage) - 1)], true, function (error, cmmts) {
                 cb(error, seq, img, cmmts);
             });
         }    ], function (error, seq, img, cmmts) {
@@ -70,7 +71,8 @@ function showCuratedComments(req, res) {
             imgId: img._id,
             comments: cmmts,
             stage: stage,
-            enableComments: false
+            enableComments: false,
+            urlAdd: '/curated'
         });
     });
 }
@@ -92,7 +94,8 @@ function getSpecificStage(req, res) {
             imgId: img._id,
             comments: [],
             stage: stage,
-            enableComments: true
+            enableComments: true,
+            urlAdd: ''
         });
     });
 }
