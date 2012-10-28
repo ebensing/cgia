@@ -81,3 +81,7 @@ label.error {
 .center-content {
     text-align: center !important;
 }
+
+.h1-height {
+    line-height: 40px;
+}
