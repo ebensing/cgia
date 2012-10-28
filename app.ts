@@ -34,6 +34,7 @@ app.post('/addComment', routes.addComment);
 app.get('/stage/:stage', routes.getSpecificStage);
 app.get('/about', routes.about);
 app.get('/video', routes.video);
+app.get('/done', routes.done);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

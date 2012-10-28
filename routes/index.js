@@ -81,4 +81,10 @@ function video(req, res) {
     });
 }
 exports.video = video;
+function done(req, res) {
+    res.render('done', {
+        title: "Leaking Data - End"
+    });
+}
+exports.done = done;
 

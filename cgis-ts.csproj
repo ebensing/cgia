@@ -61,8 +61,10 @@
     <Content Include="Public\images\glyphicons-halflings-white.png" />
     <Content Include="Public\images\glyphicons-halflings.png" />
     <Content Include="Public\images\img_bg.png" />
+    <Content Include="Public\images\living-room-future.jpg" />
     <Content Include="Public\images\living-room.jpg" />
     <TypeScriptCompile Include="Public\js\selectBox.ts" />
+    <Content Include="Public\images\street-future.jpg" />
     <Content Include="Public\images\street.jpg" />
     <Content Include="Public\images\valid.png" />
     <Content Include="Public\js\bootstrap.js" />
@@ -100,6 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="views\video.jade" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="views\done.jade" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

@@ -73,3 +73,7 @@ export function about(req: express.ExpressServerRequest, res: express.ExpressSer
 export function video(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
     res.render('video', { title: "Leaking Data - Intro" });
 }
+
+export function done(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
+    res.render('done', { title: "Leaking Data - End" });
+}

@@ -15,9 +15,12 @@ block content
         div.image-wrap
             img(src=imgUrl, alt="", id="mainImage")
         
-        if stage != 0
-            div.arrow-wrap
+        div.arrow-wrap
+            if stage != 0
                 a(href='/stage/'+stage)
+                    img(src='/images/arrow-right.png', alt='Next').img-border
+            else
+                a(href='/done/')
                     img(src='/images/arrow-right.png', alt='Next').img-border
 
     div(id="topCover").cover
