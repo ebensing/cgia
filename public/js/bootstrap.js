@@ -125,7 +125,7 @@
             var topEnd = currentMousePosition.y + ($(".modal").height() / 2);
             var topMove = 0;
             if (topEnd > $(window).height()) {
-                topMove = $(window).height() / 4;
+                topMove = $(window).height() / 4 + 150;
             }
 
             this.$element.css({
