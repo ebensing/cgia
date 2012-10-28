@@ -30,7 +30,7 @@ export function index(req : express.ExpressServerRequest, res : express.ExpressS
 
 export function addComment(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
     commentHelper.insertNewComment(req.body.imageId, req.body.nameTxt, parseFloat(req.body.xTxt), 
-        parseFloat(req.body.yTxt), parseFloat(req.body.widthTxt), parseFloat(req.body.heightTxt), req.body.titleTxt, req.body.commentTxt, (error: any) => {
+        parseFloat(req.body.yTxt), parseFloat(req.body.widthTxt), parseFloat(req.body.heightTxt), req.body.titleTxt, req.body.commentTxt, req.body.linkTxt, (error: any) => {
             res.render('postResp', {});
     });
 }

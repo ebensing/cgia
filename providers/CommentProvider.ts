@@ -10,6 +10,7 @@ declare import mongo = module("mongodb");
 
 export class Comment {
     public _id: mongo.ObjectID;
+    public link: string;
     constructor (public imageId: mongo.ObjectID, public username: string, public x: number, 
         public y: number, public width: number, public height: number, public title: string, public text: string) { }
 }
@@ -32,13 +33,14 @@ export class CommentProvider {
             }
         });
     }
-    insertNewComment(imageId: string, username: string, x: number, y: number, width: number, height: number, title: string, text: string, callback : (error : any) => void) {
+    insertNewComment(imageId: string, username: string, x: number, y: number, width: number, height: number, title: string, text: string, link: string, callback : (error : any) => void) {
         this.getCommentCollection((error: any, comments: MongoCollection) => {
             if (error) {
                 callback(error);
             } else {
                 var imgId = new ObjectID(imageId);
                 var comment = new Comment(imgId, username, x, y, width, height, title, text);
+                comment.link = link;
                 comments.insert(comment, null, callback);
             }
         });

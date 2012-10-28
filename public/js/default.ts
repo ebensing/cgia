@@ -32,6 +32,10 @@ $("document").ready(() => {
             commentTxt: {
                 minlength: 2,
                 required: true
+            },
+            linkTxt: {
+                url : true,
+                required: false
             }
         },
         highlight: function (label) {

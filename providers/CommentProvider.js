@@ -44,13 +44,14 @@ var CommentProvider = (function () {
             }
         });
     };
-    CommentProvider.prototype.insertNewComment = function (imageId, username, x, y, width, height, title, text, callback) {
+    CommentProvider.prototype.insertNewComment = function (imageId, username, x, y, width, height, title, text, link, callback) {
         this.getCommentCollection(function (error, comments) {
             if(error) {
                 callback(error);
             } else {
                 var imgId = new ObjectID(imageId);
                 var comment = new Comment(imgId, username, x, y, width, height, title, text);
+                comment.link = link;
                 comments.insert(comment, null, callback);
             }
         });

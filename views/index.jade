@@ -49,6 +49,10 @@ block content
                     label.control-label Comment:
                     div.controls
                         textarea(rows=5, id="commentTxt", name="commentTxt", placeholder="How is this used for surveillance?")
+                div.control-group
+                    label(for="linkTxt").control-label Link (optional):
+                    div.controls
+                        input(type='text', id='linkTxt', name='linkTxt', placeholder='URL')
         div.modal-footer
             button(data-dismiss="modal", aria-hidden="true").btn close
             button(id="commentSubmitBtn").btn.btn-primary Submit Item
