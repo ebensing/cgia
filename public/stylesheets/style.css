@@ -77,3 +77,7 @@ label.error {
 .modal-body-padding {
     padding: 25px !important;
 }
+
+.center-content {
+    text-align: center !important;
+}
