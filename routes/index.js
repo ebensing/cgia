@@ -34,10 +34,10 @@ function showAllComments(req, res) {
                 cb(error, seq, img, cmmts);
             });
         }    ], function (error, seq, img, cmmts) {
-        var cStg = seq.imageIds.indexOf(img._id);
-        var stage = seq.imageIds.length > (cStg + 1) ? (cStg + 1) : 0;
+        var cStg = parseInt(req.params.stage);
+        var stage = seq.imageIds.length > cStg ? cStg : 0;
         res.render('index', {
-            title: seq.title,
+            title: seq.title + " - " + img.title,
             imgUrl: img.url,
             imgId: img._id,
             comments: cmmts,
@@ -63,10 +63,10 @@ function showCuratedComments(req, res) {
                 cb(error, seq, img, cmmts);
             });
         }    ], function (error, seq, img, cmmts) {
-        var cStg = seq.imageIds.indexOf(img._id);
-        var stage = seq.imageIds.length > (cStg + 1) ? (cStg + 1) : 0;
+        var cStg = parseInt(req.params.stage);
+        var stage = seq.imageIds.length > cStg ? cStg : 0;
         res.render('index', {
-            title: seq.title,
+            title: seq.title + " - " + img.title,
             imgUrl: img.url,
             imgId: img._id,
             comments: cmmts,

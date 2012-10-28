@@ -47,9 +47,9 @@ export function showAllComments(req: express.ExpressServerRequest, res: express.
             cb(error, seq, img, cmmts);
         });
     } ], function (error: any, seq : sequences.Sequence, img : images.Image, cmmts: comments.Comment[]) {
-        var cStg = seq.imageIds.indexOf(img._id);
-        var stage = seq.imageIds.length > (cStg + 1) ? (cStg + 1) : 0;
-        res.render('index', { title: seq.title, imgUrl : img.url, imgId : img._id, comments : cmmts, stage: stage, enableComments : false, urlAdd : '/all' });
+        var cStg = parseInt(req.params.stage);
+        var stage = seq.imageIds.length > cStg ? cStg : 0;
+        res.render('index', { title: seq.title + " - " + img.title, imgUrl : img.url, imgId : img._id, comments : cmmts, stage: stage, enableComments : false, urlAdd : '/all' });
     });
 }
 
@@ -65,9 +65,9 @@ export function showCuratedComments(req: express.ExpressServerRequest, res: expr
             cb(error, seq, img, cmmts);
         });
     } ], function (error: any, seq : sequences.Sequence, img : images.Image, cmmts: comments.Comment[]) {
-        var cStg = seq.imageIds.indexOf(img._id);
-        var stage = seq.imageIds.length > (cStg + 1) ? (cStg + 1) : 0;
-        res.render('index', { title: seq.title, imgUrl : img.url, imgId : img._id, comments : cmmts, stage: stage, enableComments : false, urlAdd : '/curated' });
+        var cStg = parseInt(req.params.stage);
+        var stage = seq.imageIds.length > cStg ? cStg : 0;
+        res.render('index', { title: seq.title + " - " + img.title, imgUrl : img.url, imgId : img._id, comments : cmmts, stage: stage, enableComments : false, urlAdd : '/curated' });
     });
 }
 
