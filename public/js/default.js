@@ -62,7 +62,7 @@ $("document").ready(function () {
         var $content = $("#content-" + $(this).attr("id"));
         $(this).popover({
             animation: true,
-            html: false,
+            html: true,
             title: $content.attr("title") + " By: " + $content.attr("user"),
             content: $content.text()
         });
