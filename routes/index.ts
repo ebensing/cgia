@@ -48,7 +48,7 @@ export function showAllComments(req: express.ExpressServerRequest, res: express.
         });
     } ], function (error: any, seq : sequences.Sequence, img : images.Image, cmmts: comments.Comment[]) {
         var cStg = parseInt(req.params.stage);
-        var stage = seq.imageIds.length > cStg ? cStg : 0;
+        var stage = seq.imageIds.length > cStg ? cStg + 1 : 0;
         res.render('index', { title: seq.title + " - " + img.title, imgUrl : img.url, imgId : img._id, comments : cmmts, stage: stage, enableComments : false, urlAdd : '/all' });
     });
 }
@@ -66,7 +66,7 @@ export function showCuratedComments(req: express.ExpressServerRequest, res: expr
         });
     } ], function (error: any, seq : sequences.Sequence, img : images.Image, cmmts: comments.Comment[]) {
         var cStg = parseInt(req.params.stage);
-        var stage = seq.imageIds.length > cStg ? cStg : 0;
+        var stage = seq.imageIds.length > cStg ? cStg + 1 : 0;
         res.render('index', { title: seq.title + " - " + img.title, imgUrl : img.url, imgId : img._id, comments : cmmts, stage: stage, enableComments : false, urlAdd : '/curated' });
     });
 }

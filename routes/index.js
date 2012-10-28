@@ -35,7 +35,7 @@ function showAllComments(req, res) {
             });
         }    ], function (error, seq, img, cmmts) {
         var cStg = parseInt(req.params.stage);
-        var stage = seq.imageIds.length > cStg ? cStg : 0;
+        var stage = seq.imageIds.length > cStg ? cStg + 1 : 0;
         res.render('index', {
             title: seq.title + " - " + img.title,
             imgUrl: img.url,
@@ -64,7 +64,7 @@ function showCuratedComments(req, res) {
             });
         }    ], function (error, seq, img, cmmts) {
         var cStg = parseInt(req.params.stage);
-        var stage = seq.imageIds.length > cStg ? cStg : 0;
+        var stage = seq.imageIds.length > cStg ? cStg + 1 : 0;
         res.render('index', {
             title: seq.title + " - " + img.title,
             imgUrl: img.url,
