@@ -62,7 +62,7 @@ block content
             button(id="commentSubmitBtn").btn.btn-primary Submit Item
   
     each comment in comments
-        i(id=comment._id, x=comment.x, y=comment.y, h=comment.height, w=comment.width).map-icon.icon-z
+        i(id=comment._id, x=comment.x, y=comment.y, h=comment.height, w=comment.width).map-icon.z-icon
         div(id="content-"+comment._id, title=comment.title, user=comment.username).comment-content
             | #{comment.text}
             br
