@@ -8,7 +8,7 @@ var imageHelper = new images.ImageProvider("localhost", 27017);
 var commentHelper = new comments.CommentProvider("localhost", 27017);
 function index(req, res) {
     res.render('home', {
-        title: "Home"
+        title: "Leaking Data - Home"
     });
 }
 exports.index = index;
@@ -71,8 +71,14 @@ function getSpecificStage(req, res) {
 exports.getSpecificStage = getSpecificStage;
 function about(req, res) {
     res.render('about', {
-        title: "About"
+        title: "Leaking Data - About"
     });
 }
 exports.about = about;
+function video(req, res) {
+    res.render('video', {
+        title: "Leaking Data - Intro"
+    });
+}
+exports.video = video;
 
