@@ -57,7 +57,7 @@ export function showCuratedComments(req: express.ExpressServerRequest, res: expr
     async.waterfall([<any> (cb : (err : any, seq : sequences.Sequence) => void) => {
         sequenceHelper.getActiveSequence(cb);
     }, (seq : sequences.Sequence, cb : (err : any, seq : sequences.Sequence, img : images.Image) => void) => {
-        imageHelper.getImageById(req.params.imageId, (e: any, img: images.Image) => {
+        imageHelper.getImageById(seq.imageIds[(parseInt(req.params.stage) - 1)], (e: any, img: images.Image) => {
             cb(e, seq, img);
         });
     }, (seq: sequences.Sequence, img: images.Image, cb: (err: any, seq: sequences.Sequence, img: images.Image, comments: comments.Comment[]) => void ) => {

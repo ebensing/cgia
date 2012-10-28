@@ -53,7 +53,7 @@ function showCuratedComments(req, res) {
             sequenceHelper.getActiveSequence(cb);
         }, 
         function (seq, cb) {
-            imageHelper.getImageById(req.params.imageId, function (e, img) {
+            imageHelper.getImageById(seq.imageIds[(parseInt(req.params.stage) - 1)], function (e, img) {
                 cb(e, seq, img);
             });
         }, 
