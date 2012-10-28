@@ -62,12 +62,12 @@ block content
             button(id="commentSubmitBtn").btn.btn-primary Submit Item
   
     each comment in comments
-        i(id=comment._id, x=comment.x, y=comment.y, h=comment.height, w=comment.width).icon-screenshot.icon-z
+        i(id=comment._id, x=comment.x, y=comment.y, h=comment.height, w=comment.width).map-icon.icon-z
         div(id="content-"+comment._id, title=comment.title, user=comment.username).comment-content
             | #{comment.text}
             br
             if comment.link
-                a(href=comment.link) Link
+                a(href=comment.link, target="_blank") Link
 
     script(type="text/javascript")
         var enableComments = #{enableComments};

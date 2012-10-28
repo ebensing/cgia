@@ -86,3 +86,16 @@ label.error {
     height: 70px;
     padding-top: 30px;
 }
+
+.map-icon {
+  display: inline-block;
+  width: 49px;
+  height: 49px;
+  *margin-right: .3em;
+  line-height: 49px;
+  vertical-align: text-top;
+  background-image: url("../images/pin_map.png");
+  background-position: 14px 14px;
+  background-repeat: no-repeat;
+  margin-top: 1px;
+}
