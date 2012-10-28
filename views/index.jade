@@ -2,13 +2,15 @@ extends layout
 
 block content
     div.row
-        div.span9
+        div.span8
             h1= title
-        div.span3
+        div.span4
             if comments.length != 0
-                a(href='javascript:displayAllPopovers()').btn Show All Comment Contents
-                | &nbsp;&nbsp;
-                a(href='javascript:hideAllPopovers()').btn Hide All Comment Contents
+                div.row
+                    div.span2
+                        a(href='javascript:displayAllPopovers()').btn Show All Comment Contents
+                    div.span2
+                        a(href='javascript:hideAllPopovers()').btn Hide All Comment Contents
 
     div(style="vertical-align:top;")
         div.image-wrap
