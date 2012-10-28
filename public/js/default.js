@@ -52,7 +52,7 @@ $("document").ready(function () {
             y: event.pageY
         };
     });
-    $(".icon-screenshot").each(function () {
+    $(".map-icon").each(function () {
         var _this = this;
         $(this).css({
             top: $(this).attr("y") + "px",
@@ -83,13 +83,13 @@ $("document").ready(function () {
     });
 });
 function displayAllPopovers() {
-    $(".icon-screenshot").each(function () {
+    $(".map-icon").each(function () {
         $(this).popover('show');
         $(this).attr("shown", "true");
     });
 }
 function hideAllPopovers() {
-    $(".icon-screenshot").each(function () {
+    $(".map-icon").each(function () {
         $(this).popover('hide');
         $(this).attr("shown", "false");
     });

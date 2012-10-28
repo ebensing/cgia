@@ -64,6 +64,7 @@
     <Content Include="Public\images\living-room-future.jpg" />
     <Content Include="Public\images\living-room.jpg" />
     <TypeScriptCompile Include="Public\js\selectBox.ts" />
+    <Content Include="Public\images\pin_map.png" />
     <Content Include="Public\images\street-future.jpg" />
     <Content Include="Public\images\street.jpg" />
     <Content Include="Public\images\valid.png" />
