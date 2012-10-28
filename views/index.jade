@@ -61,6 +61,9 @@ block content
         i(id=comment._id, x=comment.x, y=comment.y, h=comment.height, w=comment.width).icon-screenshot.icon-z
         div(id="content-"+comment._id, title=comment.title, user=comment.username).comment-content
             | #{comment.text}
+            br
+            if comment.link
+                a(href=comment.link) Link
 
     script(type="text/javascript")
         var enableComments = #{enableComments};
