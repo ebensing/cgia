@@ -1,15 +1,15 @@
 extends layout
 
 block content
-    div.row
-        div.span8
+    div.row-fluid
+        div.span7
             h1= title
-        div.span4
+        div.span5
             if comments.length != 0
                 div.row
-                    div.span2
+                    div.span6
                         a(href='javascript:displayAllPopovers()').btn Show All Comment Contents
-                    div.span2
+                    div.span6
                         a(href='javascript:hideAllPopovers()').btn Hide All Comment Contents
 
     div(style="vertical-align:top;")
