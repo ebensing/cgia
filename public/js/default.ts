@@ -64,7 +64,7 @@ $("document").ready(() => {
             animation: true,
             html: true,
             title: $content.attr("title") + " By: " + $content.attr("user"),
-            content: $content.text()
+            content: $content.html()
         });
         $(this).click(() => {
             var isShown = (/^true$/i).test($(this).attr("shown"));
