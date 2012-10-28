@@ -65,7 +65,7 @@ var CommentProvider = (function () {
                 if(typeof imgId == "string") {
                     imgId = new ObjectID(imageId);
                 }
-                console.log(typeof imgId);
+                console.log(imgId);
                 comments.find({
                     imageId: imgId,
                     isCurated: curated
