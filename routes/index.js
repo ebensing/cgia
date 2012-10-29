@@ -3,9 +3,9 @@ var async = require('async');
 var sequences = require("../providers/SequenceProvider")
 var images = require("../providers/ImageProvider")
 var comments = require("../providers/CommentProvider")
-var sequenceHelper = new sequences.SequenceProvider("localhost", 27017);
-var imageHelper = new images.ImageProvider("localhost", 27017);
-var commentHelper = new comments.CommentProvider("localhost", 27017);
+var sequenceHelper = new sequences.SequenceProvider("Akroma", 27017);
+var imageHelper = new images.ImageProvider("Akroma", 27017);
+var commentHelper = new comments.CommentProvider("Akroma", 27017);
 function index(req, res) {
     res.render('home', {
         title: "Leaking Data - Home"

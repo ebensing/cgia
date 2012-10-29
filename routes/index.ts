@@ -10,9 +10,9 @@ import sequences = module("../providers/SequenceProvider");
 import images = module("../providers/ImageProvider");
 import comments = module("../providers/CommentProvider");
 
-var sequenceHelper = new sequences.SequenceProvider("localhost", 27017);
-var imageHelper = new images.ImageProvider("localhost", 27017);
-var commentHelper = new comments.CommentProvider("localhost", 27017);
+var sequenceHelper = new sequences.SequenceProvider("Akroma", 27017);
+var imageHelper = new images.ImageProvider("Akroma", 27017);
+var commentHelper = new comments.CommentProvider("Akroma", 27017);
 
 export function index(req : express.ExpressServerRequest, res : express.ExpressServerResponse) {
     /*async.waterfall([<any> (cb : (err : any, seq : sequences.Sequence) => void) => {
