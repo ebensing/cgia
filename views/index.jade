@@ -2,8 +2,11 @@ extends layout
 
 block content
     div.row-fluid
-        div.span7
+        div.span5
             h1= title
+        div.span2
+            if urlAdd != ""
+                p Click the icons on the image to see the individual comments
         div.span5
             if comments.length != 0
                 div.row
