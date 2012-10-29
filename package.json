@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "express": "3.0.0beta7",
-    "jade": "*"
+    "jade": "*",
+    "async" : "*",
+    "mongodb": "*"
   }
 }
