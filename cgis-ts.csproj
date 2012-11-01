@@ -99,13 +99,10 @@
     <Content Include="views\home.jade" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="views\about.jade" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="views\video.jade" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="views\done.jade" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="startAppProd.sh" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
