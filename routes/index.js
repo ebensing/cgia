@@ -8,7 +8,7 @@ var imageHelper = new images.ImageProvider("Akroma", 27017);
 var commentHelper = new comments.CommentProvider("Akroma", 27017);
 function index(req, res) {
     res.render('home', {
-        title: "Leaking Data - Home"
+        title: "HUIT - Home"
     });
 }
 exports.index = index;
@@ -100,21 +100,9 @@ function getSpecificStage(req, res) {
     });
 }
 exports.getSpecificStage = getSpecificStage;
-function about(req, res) {
-    res.render('about', {
-        title: "Leaking Data - About"
-    });
-}
-exports.about = about;
-function video(req, res) {
-    res.render('video', {
-        title: "Leaking Data - Intro"
-    });
-}
-exports.video = video;
 function done(req, res) {
     res.render('done', {
-        title: "Leaking Data - End"
+        title: "HUIT - End"
     });
 }
 exports.done = done;

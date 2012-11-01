@@ -25,7 +25,7 @@ export function index(req : express.ExpressServerRequest, res : express.ExpressS
         var stage = seq.imageIds.length > 1 ? 2 : 0;
         res.render('index', { title: seq.title + " - " + img.title, imgUrl : img.url, imgId : img._id, comments : [], stage : stage, enableComments : true });
     });*/
-    res.render('home', { title: "Leaking Data - Home" });
+    res.render('home', { title: "HUIT - Home" });
 }
 
 export function addComment(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
@@ -84,14 +84,6 @@ export function getSpecificStage(req: express.ExpressServerRequest, res: express
     });
 }
 
-export function about(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
-    res.render('about', { title: "Leaking Data - About" });
-}
-
-export function video(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
-    res.render('video', { title: "Leaking Data - Intro" });
-}
-
 export function done(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
-    res.render('done', { title: "Leaking Data - End" });
+    res.render('done', { title: "HUIT - End" });
 }
