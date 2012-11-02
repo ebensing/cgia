@@ -26,6 +26,7 @@ app.post('/addComment', routes.addComment);
 app.get('/stage/:stage', routes.getSpecificStage);
 app.get('/done', routes.done);
 app.get('/stage/:stage/curated', routes.showCuratedComments);
+app.get('/instructions', routes.instructions);
 http.createServer(app).listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));
 });

@@ -87,3 +87,7 @@ export function getSpecificStage(req: express.ExpressServerRequest, res: express
 export function done(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
     res.render('done', { title: "HUIT - End" });
 }
+
+export function instructions(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
+    res.render('instructions', { title: "Leaking Data - Instructions" });
+}

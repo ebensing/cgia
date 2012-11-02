@@ -106,4 +106,10 @@ function done(req, res) {
     });
 }
 exports.done = done;
+function instructions(req, res) {
+    res.render('instructions', {
+        title: "Leaking Data - Instructions"
+    });
+}
+exports.instructions = instructions;
 

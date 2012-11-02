@@ -1,6 +1,7 @@
 node_modules/
 *.log
 *.swp
-nodelib/
 obj/
 bin/
+*.d.js
+mongodb.js
