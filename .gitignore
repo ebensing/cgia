@@ -4,5 +4,3 @@ node_modules/
 nodelib/
 obj/
 bin/
-*.d.*
-mongodb.*

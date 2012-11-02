@@ -61,6 +61,10 @@
     <Content Include="Public\images\glyphicons-halflings.png" />
     <Content Include="Public\images\img_bg.png" />
     <TypeScriptCompile Include="Public\js\selectBox.ts" />
+    <Content Include="Public\images\pic1.png" />
+    <Content Include="Public\images\pic2.png" />
+    <Content Include="Public\images\pic3.png" />
+    <Content Include="Public\images\pic4.png" />
     <Content Include="Public\images\pin_map.png" />
     <Content Include="Public\images\valid.png" />
     <Content Include="Public\js\bootstrap.js" />
