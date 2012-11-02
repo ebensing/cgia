@@ -95,3 +95,7 @@ export function video(req: express.ExpressServerRequest, res: express.ExpressSer
 export function done(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
     res.render('done', { title: "Leaking Data - End" });
 }
+
+export function instructions(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
+    res.render('instructions', { title: "Leaking Data - Instructions" });
+}
