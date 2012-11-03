@@ -81,6 +81,9 @@ $("document").ready(function () {
     $("#instructionsBtn").click(function () {
         $("#instructionsModal").modal('show');
     });
+    $("#instructionsBtn2").click(function () {
+        $("#instructionsModal").modal('show');
+    });
 });
 function displayAllPopovers() {
     $(".map-icon").each(function () {

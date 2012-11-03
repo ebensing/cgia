@@ -82,6 +82,9 @@ $("document").ready(() => {
     $("#instructionsBtn").click(function () {
         $("#instructionsModal").modal('show');
     });
+    $("#instructionsBtn2").click(function () {
+        $("#instructionsModal").modal('show');
+    });
 });
 
 function displayAllPopovers() {
