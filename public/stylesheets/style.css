@@ -63,6 +63,7 @@ label.error {
 .arrow-wrap {
     display: inline-block;
     vertical-align:top;
+    position:absolute;
 }
 
 .img-border {

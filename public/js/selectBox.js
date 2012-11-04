@@ -3,15 +3,17 @@ $("document").ready(function () {
         $(".image-wrap").css({
             width: $(".image-wrap > img").width() + "px"
         });
-        $(".arrow-wrap").css({
-            "padding-top": ($(".image-wrap > img").height() / 2) + "px"
-        });
         var $image = $('#mainImage');
         var $container = $("<div>").addClass('image-overlay');
         var $selection = $('<div>').addClass('selection-box');
         var $modal = $("#commentInput").modal({
             backdrop: false,
             show: false
+        });
+        $(".arrow-wrap").css({
+            "padding-top": ($(".image-wrap > img").height() / 2) + "px",
+            "left": ($image.width() + 20).toString() + "px",
+            "top": $image.position().top + "px"
         });
         $modal.on('show', function () {
             $("#nameTxt").val("");
