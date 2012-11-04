@@ -85,6 +85,12 @@ $("document").ready(() => {
     $("#instructionsBtn2").click(function () {
         $("#instructionsModal").modal('show');
     });
+    $("#commentTxt").keypress(function (e) {
+        if (e.which == 13) {
+            e.preventDefault();
+            $("#commentForm").submit();
+        }
+    });
 });
 
 function displayAllPopovers() {

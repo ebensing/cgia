@@ -84,6 +84,12 @@ $("document").ready(function () {
     $("#instructionsBtn2").click(function () {
         $("#instructionsModal").modal('show');
     });
+    $("#commentTxt").keypress(function (e) {
+        if(e.which == 13) {
+            e.preventDefault();
+            $("#commentForm").submit();
+        }
+    });
 });
 function displayAllPopovers() {
     $(".map-icon").each(function () {
