@@ -15,8 +15,12 @@ block content
                     div.span6.h1-height
                         a(href='javascript:hideAllPopovers()').btn Hide All Comment Contents
     div.row-fluid
-        div.span6
-            | buttons go here
+        div.span3
+            a(href="#")
+                img(border=0, src="/images/left_arrow_small.png", alt="back")
+        div(style="text-align:right;").span3
+            a(href="#")
+                img(border=0, src="/images/right_arrow_small.png", alt="back")
         div.span6
             center
                 if comments.length != 0
@@ -75,7 +79,7 @@ block content
         div.modal-header
             button(type="button", data-dismiss="modal", aria-hidden="true").close
                 | X
-            h3(id="myModalLabel") Comment Grid
+            h3(id="myModalLabel") All Comments
         div.modal-body
             table.table.table-striped
                 thead
