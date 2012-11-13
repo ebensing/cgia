@@ -61,11 +61,14 @@
     <Content Include="Public\images\glyphicons-halflings.png" />
     <Content Include="Public\images\img_bg.png" />
     <TypeScriptCompile Include="Public\js\selectBox.ts" />
+    <Content Include="Public\images\left_arrow.png" />
     <Content Include="Public\images\pic1.png" />
     <Content Include="Public\images\pic2.png" />
     <Content Include="Public\images\pic3.png" />
     <Content Include="Public\images\pic4.png" />
+    <Content Include="Public\images\pin.png" />
     <Content Include="Public\images\pin_map.png" />
+    <Content Include="Public\images\right_arrow.png" />
     <Content Include="Public\images\valid.png" />
     <Content Include="Public\js\bootstrap.js" />
     <TypeScriptCompile Include="Public\js\default.ts" />
@@ -77,6 +80,7 @@
     <Content Include="Public\js\selectBox.js">
       <DependentUpon>selectBox.ts</DependentUpon>
     </Content>
+    <Content Include="Public\stylesheets\bootstrap-chrome.css" />
     <Content Include="Public\stylesheets\bootstrap.css" />
     <Content Include="Public\stylesheets\style.css" />
     <Content Include="routes\index.js">
