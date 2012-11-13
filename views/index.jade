@@ -96,7 +96,7 @@ block content
                                 else
                                     span None
         div.modal-footer
-            button(id="commentSubmitBtn").btn.btn-primary Close
+            button(id="commentSubmitBtn", data-dismiss="modal").btn.btn-primary Close
   
     each comment in comments
         i(id=comment._id, x=comment.x, y=comment.y, h=comment.height, w=comment.width).map-icon.z-icon
