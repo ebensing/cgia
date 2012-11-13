@@ -82,6 +82,16 @@ $("document").ready(() => {
     $("#instructionsBtn").click(function () {
         $("#instructionsModal").modal('show');
     });
+
+    $("#commentGrid").modal({
+        backdrop: true,
+        show: false,
+        posModal : false
+    });
+
+    $("#showGridBtn").click(function () {
+        $("#commentGrid").modal('show');
+    });
 });
 
 function displayAllPopovers() {

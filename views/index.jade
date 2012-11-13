@@ -14,6 +14,13 @@ block content
                         a(href='javascript:displayAllPopovers()').btn Show All Comment Contents
                     div.span6.h1-height
                         a(href='javascript:hideAllPopovers()').btn Hide All Comment Contents
+    div.row-fluid
+        div.span6
+            | buttons go here
+        div.span6
+            center
+                if comments.length != 0
+                    a(href='#', id="showGridBtn").btn View Comment Grid
 
     div(style="vertical-align:top;")
         div.image-wrap
@@ -63,6 +70,33 @@ block content
         div.modal-footer
             button(data-dismiss="modal", aria-hidden="true").btn close
             button(id="commentSubmitBtn").btn.btn-primary Submit Item
+
+    div(id="commentGrid", tabindex=-1, role="dialog", aria-labelledby="modalGrid", aria-hidden="true").modal.hide.fade
+        div.modal-header
+            button(type="button", data-dismiss="modal", aria-hidden="true").close
+                | X
+            h3(id="myModalLabel") Comment Grid
+        div.modal-body
+            table.table.table-striped
+                thead
+                    tr
+                        th Title
+                        th Comment
+                        th Author
+                        th Link
+                tbody
+                    each comment in comments
+                        tr
+                            td #{comment.title}
+                            td #{comment.text}
+                            td #{comment.username}
+                            td
+                                if comment.link != ''
+                                    a(href=comment.link, target="_blank") Link
+                                else
+                                    span None
+        div.modal-footer
+            button(id="commentSubmitBtn").btn.btn-primary Close
   
     each comment in comments
         i(id=comment._id, x=comment.x, y=comment.y, h=comment.height, w=comment.width).map-icon.z-icon
