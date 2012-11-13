@@ -38,7 +38,7 @@ block content
         div.image-wrap
             img(src=imgUrl, alt="", id="mainImage")
         
-        div.arrow-wrap
+        div.arrow-wrap.hide
             if stage != 0
                 a(href='/stage/'+stage+urlAdd)
                     img(src='/images/right_arrow.png', alt='Next').img-border
