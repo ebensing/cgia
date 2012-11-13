@@ -16,11 +16,19 @@ block content
                         a(href='javascript:hideAllPopovers()').btn Hide All Comment Contents
     div.row-fluid
         div.span3
-            a(href="#")
-                img(border=0, src="/images/left_arrow_small.png", alt="back")
+            if stage != 0 && stage > 2
+                a(href='/stage/'+(stage-2)+urlAdd)
+                    img(border=0, src="/images/left_arrow_small.png", alt="back")
+            else if stage == 0
+                a(href='/stage/'+prevStage+urlAdd)
+                    img(border=0, src="/images/left_arrow_small.png", alt="back")
         div(style="text-align:right;").span3
-            a(href="#")
-                img(border=0, src="/images/right_arrow_small.png", alt="back")
+            if stage != 0
+                a(href='/stage/'+stage+urlAdd)
+                    img(src="/images/right_arrow_small.png", alt="next").img-border
+            else
+                a(href='/done/')
+                    img(src="/images/right_arrow_small.png", alt="next").img-border
         div.span6
             center
                 if comments.length != 0

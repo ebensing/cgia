@@ -62,6 +62,7 @@
     <Content Include="Public\images\img_bg.png" />
     <TypeScriptCompile Include="Public\js\selectBox.ts" />
     <Content Include="Public\images\left_arrow.png" />
+    <Content Include="Public\images\left_arrow_small.png" />
     <Content Include="Public\images\pic1.png" />
     <Content Include="Public\images\pic2.png" />
     <Content Include="Public\images\pic3.png" />
@@ -69,6 +70,7 @@
     <Content Include="Public\images\pin.png" />
     <Content Include="Public\images\pin_map.png" />
     <Content Include="Public\images\right_arrow.png" />
+    <Content Include="Public\images\right_arrow_small.png" />
     <Content Include="Public\images\valid.png" />
     <Content Include="Public\js\bootstrap.js" />
     <TypeScriptCompile Include="Public\js\default.ts" />

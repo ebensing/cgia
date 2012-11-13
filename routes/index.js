@@ -42,6 +42,7 @@ function showAllComments(req, res) {
             imgId: img._id,
             comments: cmmts,
             stage: stage,
+            prevStage: (cStg - 1),
             enableComments: false,
             urlAdd: '/all'
         });
@@ -71,6 +72,7 @@ function showCuratedComments(req, res) {
             imgId: img._id,
             comments: cmmts,
             stage: stage,
+            prevStage: (cStg - 1),
             enableComments: false,
             urlAdd: '/curated'
         });
@@ -94,6 +96,7 @@ function getSpecificStage(req, res) {
             imgId: img._id,
             comments: [],
             stage: stage,
+            prevStage: (parseInt(req.params.stage) - 1),
             enableComments: true,
             urlAdd: ''
         });
