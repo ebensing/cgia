@@ -10,7 +10,10 @@ declare import mongo = module("mongodb");
 
 export class Image {
     public _id: mongo.ObjectID;
-    constructor (public url: string, public title: string) { }
+    public votes: number;
+    constructor (public url: string, public title: string) { 
+        this.votes = 0;
+    }
 }
 
 export class ImageProvider {
@@ -33,6 +36,16 @@ export class ImageProvider {
                     oId = new mongo.ObjectID(id);
                 }
                 images.findOne({ _id: oId }, callback);
+            }
+        });
+    }
+    voteForImageById(id: string, callback: (error: any) => void ) {
+        this.getImageCollection((error : any, images : MongoCollection) => {
+            if (error) {
+                callback(error);
+            } else {
+                var oId = new mongo.ObjectID(id);
+                images.update({ _id: oId }, { $inc: { votes : 1} }, callback);
             }
         });
     }

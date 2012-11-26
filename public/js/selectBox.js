@@ -46,11 +46,7 @@ $("document").ready(function () {
             $selection.appendTo($container);
             if(enableComments) {
                 $container.on('mousemove', function (e) {
-                    var move_x = e.pageX - $image.position().left;
-                    var move_y = e.pageY - $image.position().top;
-                    var width = Math.abs(move_x - click_x);
-                    var height = Math.abs(move_y - click_y);
-
+                    var move_x = e.pageX - $image.position().left, move_y = e.pageY - $image.position().top, width = Math.abs(move_x - click_x), height = Math.abs(move_y - click_y);
                     $selection.css({
                         'width': width,
                         'height': height

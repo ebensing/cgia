@@ -65,4 +65,3 @@ var SequenceProvider = (function () {
     return SequenceProvider;
 })();
 exports.SequenceProvider = SequenceProvider;
-

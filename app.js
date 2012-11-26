@@ -1,7 +1,5 @@
 var express = require("express")
-var routes = require('./routes');
-var http = require('http');
-
+var routes = require('./routes'), http = require('http');
 var app = express.createServer();
 app.configure(function () {
     app.set('port', process.env.PORT || 3000);
@@ -30,4 +28,3 @@ app.get('/instructions', routes.instructions);
 http.createServer(app).listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));
 });
-
