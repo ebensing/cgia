@@ -91,3 +91,9 @@ export function done(req: express.ExpressServerRequest, res: express.ExpressServ
 export function instructions(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
     res.render('instructions', { title: "Leaking Data - Instructions" });
 }
+
+export function doVote(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
+    imageHelper.voteForImageById(req.params.id, (error: any) => {
+        res.write("{ status : 'ok' }");
+    });
+}

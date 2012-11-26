@@ -115,3 +115,9 @@ function instructions(req, res) {
     });
 }
 exports.instructions = instructions;
+function doVote(req, res) {
+    imageHelper.voteForImageById(req.params.id, function (error) {
+        res.write("{ status : 'ok' }");
+    });
+}
+exports.doVote = doVote;

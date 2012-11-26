@@ -15,14 +15,18 @@ block content
                     div.span6.h1-height
                         a(href='javascript:hideAllPopovers()').btn Hide All Comment Contents
     div.row-fluid
-        div.span3
+        div.span2
             if stage != 0 && stage > 2
                 a(href='/stage/'+(stage-2)+urlAdd)
                     img(border=0, src="/images/left_arrow_small.png", alt="back")
             else if stage == 0
                 a(href='/stage/'+prevStage+urlAdd)
                     img(border=0, src="/images/left_arrow_small.png", alt="back")
-        div(style="text-align:right;").span3
+        div.span2
+            span.voteBox
+                | votes go here
+            a(href="#", id="voteBtn").btn Vote
+        div(style="text-align:right;").span2
             if stage != 0
                 a(href='/stage/'+stage+urlAdd)
                     img(src="/images/right_arrow_small.png", alt="next").img-border
