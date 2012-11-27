@@ -101,4 +101,5 @@ label.error {
 .voteBox {
     border:1px solid black;
     padding:3px;
+    text-align:center;
 }
