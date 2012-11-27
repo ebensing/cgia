@@ -1,6 +1,6 @@
 ﻿#!/bin/bash
 
-#setup script for ubuntu
+#setup script for ubuntu - MUST BE RUN FROM SETUP DIRECTORY
 
 #get build-essential
 
@@ -22,3 +22,9 @@ sudo sh -c "echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart di
 sudo apt-get update
 sudo apt-get install mongodb-10gen
 sudo service mongodb restart
+
+#do fun setup-y stuff
+sudo npm install supervisor -g
+mongo cgia-huit db_setup.js
+cd ../
+sudo npm install -d
