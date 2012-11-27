@@ -89,6 +89,16 @@ $("document").ready(function () {
     $("#showGridBtn").click(function () {
         $("#commentGrid").modal('show');
     });
+    $("#voteBtn").click(function () {
+        var imgId = $("#imageId").val();
+        $.post('/vote/' + imgId, {
+        }, function (data) {
+            $(this).hide();
+            var count = parseInt($(this).siblings("span.voteBox").text());
+            count++;
+            $(this).siblings("span.voteBox").text(count);
+        });
+    });
 });
 function displayAllPopovers() {
     $(".map-icon").each(function () {
