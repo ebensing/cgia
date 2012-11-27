@@ -35,10 +35,13 @@ html
                 p
                     | Use the arrows above the images to move forward and backwards between images. 
                     | You may also vote for layouts that you like as well using the Vote button above the image.
-                div.half-width
-                    img(src='/images/drag-before.png', alt='Before')
-                div.half-width
-                    img(src='/images/drag-after.png', alt='Before')
+                div.row-fluid
+                    div.span4
+                        img(src='/images/drag-before.png', alt='Before')
+                    div.span4
+                        img(src='/images/drag-middle.png', alt='Middle')
+                    div.span4
+                        img(src='/images/drag-after.png', alt='After')
 
             div.modal-footer
                 button(data-dismiss="modal", aria-hidden="true").btn close
