@@ -44,7 +44,8 @@ function showAllComments(req, res) {
             stage: stage,
             prevStage: (cStg - 1),
             enableComments: false,
-            urlAdd: '/all'
+            urlAdd: '/all',
+            votes: img.votes
         });
     });
 }
@@ -74,7 +75,8 @@ function showCuratedComments(req, res) {
             stage: stage,
             prevStage: (cStg - 1),
             enableComments: false,
-            urlAdd: '/curated'
+            urlAdd: '/curated',
+            votes: img.votes
         });
     });
 }
@@ -98,7 +100,8 @@ function getSpecificStage(req, res) {
             stage: stage,
             prevStage: (parseInt(req.params.stage) - 1),
             enableComments: true,
-            urlAdd: ''
+            urlAdd: '',
+            votes: img.votes
         });
     });
 }

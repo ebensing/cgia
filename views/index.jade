@@ -23,8 +23,7 @@ block content
                 a(href='/stage/'+prevStage+urlAdd)
                     img(border=0, src="/images/left_arrow_small.png", alt="back")
         div.span2
-            span.voteBox
-                | votes go here
+            span.voteBox #{votes}
             a(href="#", id="voteBtn").btn Vote
         div(style="text-align:right;").span2
             if stage != 0
