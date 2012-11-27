@@ -97,3 +97,7 @@ label.error {
   background-repeat: no-repeat;
   margin-top: 1px;
 }
+
+.voteBox {
+    border:1px solid black;
+}
