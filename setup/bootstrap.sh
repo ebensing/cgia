@@ -24,7 +24,7 @@ sudo apt-get install mongodb-10gen
 sudo service mongodb restart
 
 #do fun setup-y stuff
-sudo npm install supervisor -g
+sudo npm install forever -g
 mongo cgia-huit db_setup.js
 cd ../
 sudo npm install -d
