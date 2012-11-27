@@ -23,10 +23,11 @@ block content
                 a(href='/stage/'+prevStage+urlAdd)
                     img(border=0, src="/images/left_arrow_small.png", alt="back")
         div.span2
-            span.voteBox #{votes}
-            span
-                | &nbsp;&nbsp;&nbsp;
-            a(href="#", id="voteBtn").btn Vote
+            center
+                span.voteBox #{votes}
+                span
+                    | &nbsp;&nbsp;&nbsp;
+                a(href="#", id="voteBtn").btn Vote
         div(style="text-align:right;").span2
             if stage != 0
                 a(href='/stage/'+stage+urlAdd)
