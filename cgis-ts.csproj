@@ -58,6 +58,9 @@
     <Content Include="Public\images\drag-before.png" />
     <Content Include="Public\images\drag-middle.png" />
     <Content Include="Public\images\error.png" />
+    <Content Include="Public\images\final-map-1.png" />
+    <Content Include="Public\images\final-map-2.png" />
+    <Content Include="Public\images\final-map-3.png" />
     <Content Include="Public\images\glyphicons-halflings-white.png" />
     <Content Include="Public\images\glyphicons-halflings.png" />
     <Content Include="Public\images\img_bg.png" />
@@ -92,6 +95,7 @@
     <TypeScriptCompile Include="routes\index.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="setup\db_setup.js" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
   </ItemGroup>
