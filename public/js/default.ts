@@ -98,9 +98,9 @@ $("document").ready(() => {
         $.post('/vote/' + imgId, {}, function (data) {
             var btn = $("#voteBtn");
             btn.hide();
-            var count = parseInt(btn.siblings("span.voteBox").text());
+            var count = parseInt(btn.siblings("span.voteBox").children("span.votes").text());
             count++;
-            btn.siblings("span.voteBox").text(count);
+            btn.siblings("span.voteBox").children("span.votes").text(count);
         });
     });
 });

@@ -24,7 +24,9 @@ block content
                     img(border=0, src="/images/left_arrow_small.png", alt="back")
         div.span2
             center
-                span.voteBox #{votes}
+                span.voteBox 
+                    span Votes:&nbsp;
+                    span.votes #{votes}
                 span
                     | &nbsp;&nbsp;&nbsp;
                 a(href="#", id="voteBtn").btn Vote
