@@ -94,6 +94,6 @@ export function instructions(req: express.ExpressServerRequest, res: express.Exp
 
 export function doVote(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
     imageHelper.voteForImageById(req.params.id, (error: any) => {
-        res.write("{ status : 'ok' }");
+        res.render('postResp', {});
     });
 }
