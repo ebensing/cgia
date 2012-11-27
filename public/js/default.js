@@ -93,10 +93,11 @@ $("document").ready(function () {
         var imgId = $("#imageId").val();
         $.post('/vote/' + imgId, {
         }, function (data) {
-            $(this).hide();
-            var count = parseInt($(this).siblings("span.voteBox").text());
+            var btn = $("#voteBtn");
+            btn.hide();
+            var count = parseInt(btn.siblings("span.voteBox").text());
             count++;
-            $(this).siblings("span.voteBox").text(count);
+            btn.siblings("span.voteBox").text(count);
         });
     });
 });
