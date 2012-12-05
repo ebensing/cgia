@@ -21,10 +21,6 @@ $("document").ready(() => {
     });
     $('#commentForm').validate({
         rules: {
-            titleTxt: {
-                minlength: 2,
-                required: true
-            },
             nameTxt: {
                 minlength: 2,
                 required: true

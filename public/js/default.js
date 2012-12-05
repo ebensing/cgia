@@ -22,10 +22,6 @@ $("document").ready(function () {
     });
     $('#commentForm').validate({
         rules: {
-            titleTxt: {
-                minlength: 2,
-                required: true
-            },
             nameTxt: {
                 minlength: 2,
                 required: true
