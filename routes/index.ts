@@ -80,7 +80,7 @@ export function getSpecificStage(req: express.ExpressServerRequest, res: express
         });
     } ], function (error: any, seq : sequences.Sequence, img : images.Image) {
         var stage = seq.imageIds.length >= (parseInt(req.params.stage) + 1) ? (parseInt(req.params.stage) + 1) : 0;
-        res.render('index', { title: seq.title + " - " + img.title, imgUrl : img.url, imgId : img._id, comments : [], stage : stage, prevStage: (parseInt(req.params.stage) - 1), enableComments : true, urlAdd : '', votes: img.votes });
+        res.render('index', { title: seq.title + " - " + img.title, imgUrl : img.url, imgId : img._id, comments : [], stage : stage, prevStage: (parseInt(req.params.stage) - 1), enableComments : false, urlAdd : '', votes: img.votes });
     });
 }
 
@@ -89,7 +89,7 @@ export function done(req: express.ExpressServerRequest, res: express.ExpressServ
 }
 
 export function instructions(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
-    res.render('instructions', { title: "Leaking Data - Instructions" });
+    res.render('instructions', { title: "HUIT Careers - Instructions" });
 }
 
 export function doVote(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {

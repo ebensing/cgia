@@ -29,11 +29,11 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/stage/:stage/all', routes.showAllComments);
+//app.get('/stage/:stage/all', routes.showAllComments);
 app.post('/addComment', routes.addComment);
 app.get('/stage/:stage', routes.getSpecificStage);
 app.get('/done', routes.done);
-app.get('/stage/:stage/curated', routes.showCuratedComments);
+//app.get('/stage/:stage/curated', routes.showCuratedComments);
 app.get('/instructions', routes.instructions);
 app.post('/vote/:id', routes.doVote);
 

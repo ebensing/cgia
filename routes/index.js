@@ -99,7 +99,7 @@ function getSpecificStage(req, res) {
             comments: [],
             stage: stage,
             prevStage: (parseInt(req.params.stage) - 1),
-            enableComments: true,
+            enableComments: false,
             urlAdd: '',
             votes: img.votes
         });
@@ -114,7 +114,7 @@ function done(req, res) {
 exports.done = done;
 function instructions(req, res) {
     res.render('instructions', {
-        title: "Leaking Data - Instructions"
+        title: "HUIT Careers - Instructions"
     });
 }
 exports.instructions = instructions;
