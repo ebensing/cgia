@@ -1,6 +1,6 @@
 ﻿
 
-var seq = db.sequences.findOne();
+var seq = db.sequences.find().toArray()[0];
 
 var output = "{";
 
