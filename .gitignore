@@ -5,3 +5,5 @@ obj/
 bin/
 *.d.js
 mongodb.js
+*.dll
+*.pdb
