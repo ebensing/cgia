@@ -1,0 +1,43 @@
+db.images.insert({ title: "HUIT Applications Development Career Map v3", url: "/images/huit_images/HUIT Applications Development Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Apps Architecture Career Map v3", url: "/images/huit_images/HUIT Apps Architecture Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Apps Development Career Map v3", url: "/images/huit_images/HUIT Apps Development Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Apps Management Career Map v3", url: "/images/huit_images/HUIT Apps Management Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Business Systems Analysis Career Map v3", url: "/images/huit_images/HUIT Business Systems Analysis Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT DBA Career Map v3", url: "/images/huit_images/HUIT DBA Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT DBA Management Career Map v3", url: "/images/huit_images/HUIT DBA Management Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Data Architecture Career Map v3", url: "/images/huit_images/HUIT Data Architecture Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Data Center Operations - Production Control Career Map v3", url: "/images/huit_images/HUIT Data Center Operations - Production Control Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Data Center-Operations Management Career Map v3", url: "/images/huit_images/HUIT Data Center-Operations Management Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Data Storage Admin Career Map v3", url: "/images/huit_images/HUIT Data Storage Admin Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Data Storage Mgmt Career Map v3", url: "/images/huit_images/HUIT Data Storage Mgmt Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Educational Technology Consultant Career Map v3", url: "/images/huit_images/HUIT Educational Technology Consultant Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Help Desk-User Support Career Map v3", url: "/images/huit_images/HUIT Help Desk-User Support Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT IT Management Career Map v3", url: "/images/huit_images/HUIT IT Management Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Information Security Analysis Career Map v3", url: "/images/huit_images/HUIT Information Security Analysis Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Information Security Architecture-Engineering Career Map v3", url: "/images/huit_images/HUIT Information Security Architecture-Engineering Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Information Security Engineer Career Map v3", url: "/images/huit_images/HUIT Information Security Engineer Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Information Security Management Career Map v3", url: "/images/huit_images/HUIT Information Security Management Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Multimedia Engineering Career Map v3", url: "/images/huit_images/HUIT Multimedia Engineering Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Network Administration Career Map v3", url: "/images/huit_images/HUIT Network Administration Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Network Architecture Career Map v3", url: "/images/huit_images/HUIT Network Architecture Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Network Engineer Career Map v3", url: "/images/huit_images/HUIT Network Engineer Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Network Management Career Map v3", url: "/images/huit_images/HUIT Network Management Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Product Management Career Map v3", url: "/images/huit_images/HUIT Product Management Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Product Specialist Career Map v3", url: "/images/huit_images/HUIT Product Specialist Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Program Manager-Portfolio Manager Career Map v3", url: "/images/huit_images/HUIT Program Manager-Portfolio Manager Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Project Management Career Map v3", url: "/images/huit_images/HUIT Project Management Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT QA Analyst Career Map v3", url: "/images/huit_images/HUIT QA Analyst Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Release Analyst Career Map v3", url: "/images/huit_images/HUIT Release Analyst Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Release Management Career Map v3", url: "/images/huit_images/HUIT Release Management Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Service Management Career Map v3", url: "/images/huit_images/HUIT Service Management Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT Systems Administration Career Map", url: "/images/huit_images/HUIT Systems Administration Career Map.png", votes: 0 });
+db.images.insert({ title: "HUIT Systems Engineering Career Map", url: "/images/huit_images/HUIT Systems Engineering Career Map.png", votes: 0 });
+db.images.insert({ title: "HUIT Systems Management Career Map", url: "/images/huit_images/HUIT Systems Management Career Map.png", votes: 0 });
+db.images.insert({ title: "HUIT Tech Field Support Career Map v3", url: "/images/huit_images/HUIT Tech Field Support Career Map v3.png", votes: 0 });
+db.images.insert({ title: "HUIT User Support Management Career Map v3", url: "/images/huit_images/HUIT User Support Management Career Map v3.png", votes: 0 });
+var ids = db.images.find({}, { _id: true }).toArray()
+     var idArr = [];
+    for (var i = 0; i < ids.length; i++) {
+         idArr.push(ids[i]._id);
+     } 
+    db.sequences.insert({ title: "Job Title Maps", "imageIds": idArr, "isActive": true });
