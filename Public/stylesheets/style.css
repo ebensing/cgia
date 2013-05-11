@@ -103,3 +103,8 @@ label.error {
     padding:3px;
     text-align:center;
 }
+
+.map_title {
+    text-align: center;
+    font-weight:bold;
+}
