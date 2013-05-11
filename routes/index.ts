@@ -100,7 +100,7 @@ export function doVote(req: express.ExpressServerRequest, res: express.ExpressSe
 }
 
 export function map(req: express.ExpressServerRequest, res: express.ExpressServerResponse) {
-    var jsonMap = JSON.parse(fs.readFileSync("img_map.json", "utf8").toString());
+    var jsonMap = JSON.parse(fs.readFileSync("routes/img_map.json", "utf8").toString());
     var map_data = [
         [
             { title: 'Cross Functional Management', itemStrs: ['IT Management'], items :[] },

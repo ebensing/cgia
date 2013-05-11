@@ -127,7 +127,7 @@ function doVote(req, res) {
 }
 exports.doVote = doVote;
 function map(req, res) {
-    var jsonMap = JSON.parse(fs.readFileSync("img_map.json", "utf8").toString());
+    var jsonMap = JSON.parse(fs.readFileSync("routes/img_map.json", "utf8").toString());
     var map_data = [
         [
             {
