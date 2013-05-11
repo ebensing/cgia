@@ -125,6 +125,10 @@
     <TypeScriptCompile Include="routes\index.ts" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="setup\create_map_and_import.ts" />
+    <Content Include="setup\create_map_and_import.js">
+      <DependentUpon>create_map_and_import.ts</DependentUpon>
+    </Content>
     <Content Include="setup\db_setup.js" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
