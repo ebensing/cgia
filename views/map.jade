@@ -3,16 +3,16 @@
 block content
     
     div.container
-		table.table
-			each row in rows
-				tr
-					each section in row
-						div.map_title #{section.title}
-						div.map_content
-							ul
-								each item in section.items
-									if item.disabled
-										li.map_disabled #{item.title}
-									else
-										li
-											a(href=item.url) #{item.title}
+        table.table
+            each row in rows
+                tr
+                    each section in row
+                        div.map_title #{section.title}
+                        div.map_content
+                            ul
+                                each item in section.items
+                                    if item.disabled
+                                        li.map_disabled #{item.title}
+                                    else
+                                        li
+                                            a(href=item.url) #{item.title}
