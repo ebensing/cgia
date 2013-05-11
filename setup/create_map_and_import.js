@@ -8,10 +8,10 @@ for(var i = 0; i < files.length; i++) {
     var title = files[i].replace(".png", "");
     import_output += import_template.replace("<%title%>", title).replace("<%url%>", imgPath + files[i]);
 }
-import_output += 'var ids = db.images.find({}, { _id: true }).toArray() \
-    var idArr = [];\
-    for (var i = 0; i < ids.length; i++) { \
-        idArr.push(ids[i]._id); \
-    } \
+import_output += 'var ids = db.images.find({}, { _id: true }).toArray()\n \
+    var idArr = [];\n\
+    for (var i = 0; i < ids.length; i++) {\n \
+        idArr.push(ids[i]._id);\n \
+    } \n\
     db.sequences.insert({ title: "Job Title Maps", "imageIds": idArr, "isActive": true });';
 fs.writeFileSync('db_import_script.js', import_output);
