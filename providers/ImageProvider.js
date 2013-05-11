@@ -45,4 +45,3 @@ var ImageProvider = (function () {
     return ImageProvider;
 })();
 exports.ImageProvider = ImageProvider;
-
