@@ -23,6 +23,7 @@ app.post('/addComment', routes.addComment);
 app.get('/stage/:stage', routes.getSpecificStage);
 app.get('/done', routes.done);
 app.get('/instructions', routes.instructions);
+app.get('/map', routes.map);
 app.post('/vote/:id', routes.doVote);
 http.createServer(app).listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));

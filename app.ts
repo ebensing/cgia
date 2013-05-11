@@ -35,6 +35,7 @@ app.get('/stage/:stage', routes.getSpecificStage);
 app.get('/done', routes.done);
 //app.get('/stage/:stage/curated', routes.showCuratedComments);
 app.get('/instructions', routes.instructions);
+app.get('/map', routes.map);
 app.post('/vote/:id', routes.doVote);
 
 
