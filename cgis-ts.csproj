@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="setup\create_map_and_import.ts" />
+    <Content Include="setup\create_map.js" />
     <Content Include="setup\create_map_and_import.js">
       <DependentUpon>create_map_and_import.ts</DependentUpon>
     </Content>
