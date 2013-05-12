@@ -21,7 +21,8 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
-  app.set('view options', {  pretty: true });
+  app.set('view options', { pretty: true });
+  app.locals.pretty = true;
 });
 
 app.configure('development', function(){
