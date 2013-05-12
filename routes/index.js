@@ -100,7 +100,7 @@ function getSpecificStage(req, res) {
             comments: [],
             stage: stage,
             prevStage: (parseInt(req.params.stage) - 1),
-            enableComments: false,
+            enableComments: true,
             urlAdd: '',
             votes: img.votes
         });
