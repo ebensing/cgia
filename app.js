@@ -14,6 +14,7 @@ app.configure(function () {
     app.set('view options', {
         pretty: true
     });
+    app.locals.pretty = true;
 });
 app.configure('development', function () {
     app.use(express.errorHandler());
